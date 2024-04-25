@@ -5,21 +5,19 @@
  */
 
 package se.kth.iv1350.pos.integration;
+import se.kth.iv1350.pos.model.Sale;
 
 /**
 *
  */
-public class SaleLog {
 
-    public void logSale(){
+public class Receipt {
     
+    public Receipt(){
+        
     }
-            
-    public void showTotalPrice(){
-    
+
+    public void printReceipt(Sale sale){
+        System.out.println("Receipt printed - Under the water blublub");
     }
-    
-    /*public float endSale(){
-    
-    }*/
 }

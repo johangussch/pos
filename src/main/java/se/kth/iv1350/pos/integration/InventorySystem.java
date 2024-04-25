@@ -5,26 +5,27 @@
  */
 
 package se.kth.iv1350.pos.integration;
-import se.kth.iv1350.pos.model.ItemDTO;
-import se.kth.iv1350.pos.model.Sale;
+import java.util.*;
+
 import se.kth.iv1350.pos.model.Item;
+import se.kth.iv1350.pos.model.ItemDTO;
 
 /**
 *
  */
 public class InventorySystem {
-    private Item[] storeItems = new Item[10];
-    private ItemDTO[] itemDTOs = new ItemDTO[10];
+    private List<Item> storeItems = new ArrayList<>();
+    private List<ItemDTO> itemDTOs = new ArrayList<>();
 
     public InventorySystem(){
         
     }
 
     public void addItem() {
-        this.storeItems[0] = new Item(1, new ItemDTO("Milk", 10, 2), 10);
-        this.storeItems[1] = new Item(2, new ItemDTO("Bread", 20, 3), 10);
-        this.itemDTOs[0] = new ItemDTO("Milk", 10, 2);
-        this.itemDTOs[1] = new ItemDTO("Bread", 20, 3);
+        this.storeItems.add(new Item(1, new ItemDTO("Milk", 10, 2), 10));
+        this.storeItems.add(new Item(2, new ItemDTO("Bread", 20, 3), 10));
+        this.itemDTOs.add(new ItemDTO("Milk", 10, 2));
+        this.itemDTOs.add(new ItemDTO("Bread", 20, 3));
     }
     
     public Item fetchItem(int itemID){
@@ -34,11 +35,21 @@ public class InventorySystem {
         return null;
     }
 
-    public void calculatePrice(){
+    public void updateQuantity(int itemID, int newQuantity){
+        Item item = fetchItem(itemID);
 
+        if (item != null) {
+            storeItems.set(storeItems.indexOf(fetchItem(itemID)), new Item(itemID, fetchItem(itemID).fetchItemDTO(), newQuantity));
+        }
     }
-    
-    public void updateInventory(Sale sale){
-    
+
+    public void updateInventory(List<Item> items){
+        for (Item item : items){
+            for (Item storeItem : storeItems){
+                if (item.fetchItemID() == storeItem.fetchItemID()){
+                    updateQuantity(item.fetchItemID(), storeItem.fetchItemQuantity() - item.fetchItemQuantity());
+                }
+            }
+        }
     }
 }

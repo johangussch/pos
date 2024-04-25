@@ -1,0 +1,37 @@
+Add 1 item with item id def456 :
+Item ID : def456
+Item name : YouGoGo Blueberry
+Item cost : 14:90 SEK
+VAT : 6%
+Item description : YouGoGo Blueberry 240 g , low sugar youghurt ,
+blueberry flavour
+
+Total cost ( incl VAT ): 74:70 SEK
+Total VAT : 4:23 SEK
+
+End sale :
+Total cost ( incl VAT ): 74:70 SEK
+
+Customer pays 100:00 SEK :
+Sent sale info to external accounting system .
+Told external inventory system to decrease inventory quantity
+of item abc123 by 2 units .
+Told external inventory system to decrease inventory quantity
+of item def456 by 1 units .
+
+- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -
+Time of Sale : 2024 -02 -12 16:05
+
+4BigWheel Oatmeal 2 x 29:90 59:80 SEK
+4YouGoGo Blueberry 1 x 14:90 14:90 SEK
+
+(4) 
+Object-Oriented Design, IV1350 Seminar 3, Implementation
+Total : 74:70 SEK
+VAT : 4:23
+
+Cash : 100 SEK
+Change : 25:30 SEK
+- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - - - -
+
+Change to give the customer : 25:30 SEK

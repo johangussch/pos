@@ -5,18 +5,21 @@
  */
 
 package se.kth.iv1350.pos.controller;
-import se.kth.iv1350.pos.integration.InventorySystem;
-import se.kth.iv1350.pos.model.SaleDTO;
-import se.kth.iv1350.pos.model.Item;
-import se.kth.iv1350.pos.model.Sale;
+import se.kth.iv1350.pos.integration.*;
+import se.kth.iv1350.pos.model.*;
+import java.util.*;
 
 /**
 *
  */
 public class Controller {
     private InventorySystem inventorySystem;
+    private AccountingSystem accountingSystem;
+    private Register register;
     private Sale sale;
     private Item item;
+    private ItemDTO itemDTO;
+    private Receipt receipt;
     
     // KLAR
     public void createNewSale(){
@@ -29,24 +32,34 @@ public class Controller {
         if (item == null) return null;
 
         this.sale.listSoldltem(item, itemQuantity);
-        this.sale.runningTotal += item.itemPrice * itemQuantity;
-
-        SaleDTO saleInfo = this.sale.fetchSalelnfo();
-
-        return saleInfo;
+        this.sale.runningTotal += itemDTO.itemPrice * itemQuantity;
+        this.sale.totalVAT += itemDTO.itemVAT * itemQuantity;
+        
+        return this.sale.fetchSalelnfo();
     }
     
-    public void enterPayment(){
-    
-    }
+    public void enterPayment(float paidAmount, List<Item> boughtItems){
+        float change = paidAmount - this.sale.totalPrice;
 
+        if (change > 0) { 
+            register.increaseAmount(paidAmount - change);
+        } else {
+            register.increaseAmount(paidAmount);
+        }
+        
+        accountingSystem.recordSoldItem(boughtItems);
+        inventorySystem.updateInventory(boughtItems);
+
+    }
+    
     public float endSale(){
-        float totalPrice = this.sale.fetchTotalPrice();
-
-        return totalPrice;
+        this.sale.totalPrice = this.sale.runningTotal + this.sale.totalVAT;
+        
+        return this.sale.totalPrice;
     } 
     
-    /*public ItemDTO fetchBoughtItems(){
-    
-    }*/
+    public void print() {
+        receipt.printReceipt(this.sale);
+    }
+
 }

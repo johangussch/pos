@@ -16,7 +16,7 @@ public class Register {
         this.amount = 0;
     }
     
-    public void increaseAmount(){
-    
+    public void increaseAmount(float amount){
+        this.amount += amount;
     }
 }

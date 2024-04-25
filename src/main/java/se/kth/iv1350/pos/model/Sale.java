@@ -8,38 +8,48 @@ package se.kth.iv1350.pos.model;
 
 import java.time.LocalTime;
 import java.util.*;
-
+import se.kth.iv1350.pos.integration.InventorySystem;
 /**
 *
  */
 public class Sale {
-    private LocalTime saleTime;
+    public LocalTime saleTime;
     public SaleDTO saleInfo;
     public float runningTotal;
     public float totalPrice;
     public float totalVAT;
-    public List<Item> items;
+    public List<Item> scannedItems;
+    
+    private InventorySystem inventorySystem;
     
     public Sale() {
         this.saleTime = LocalTime.now();
         this.saleInfo = new SaleDTO(saleTime, 0, 0, null, 0);
-        this.items = new ArrayList<>();
+        this.scannedItems = new ArrayList<>();
     }
     
     public float fetchRunningTotal(){
         return this.runningTotal;
     }
+
     public SaleDTO fetchSalelnfo(){
         return this.saleInfo;
     }
-    public float fetchTotalPrice(){
-        return this.totalPrice;
-    }
+
     public void listSoldltem(Item item, int itemQuantity){
-        this.items.add(item);
+        if (scannedItems.contains(item)) {
+            for (Item scannedItem : scannedItems) {
+                if (scannedItem.fetchItemID() == (item.fetchItemID())) {
+                    scannedItems.set(scannedItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.fetchItemQuantity() + itemQuantity));
+                }
+            }
+        } else {
+            this.scannedItems.add(item);
+        }
     }
+    
     public List<Item> fetchItems(){
-        return this.items;
+        return this.scannedItems;
     }
     
     /* 
