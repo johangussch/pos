@@ -21,7 +21,6 @@ public class Controller {
     private ItemDTO itemDTO;
     private Receipt receipt;
     
-    // KLAR
     public void createNewSale(){
         this.sale = new Sale();
     }

@@ -18,7 +18,7 @@ public class View {
     
     public View(Controller controller){
         this.controller = controller;
-        this.sale = new Sale(); // Initialize the 'sale' object TEMPORÄR FÖR DET FUNKAR YEAH
+        //this.sale = new Sale(); // Initialize the 'sale' object TEMPORÄR FÖR DET FUNKAR YEAH
     }
 
 
