@@ -23,7 +23,7 @@ public class Sale {
     private InventorySystem inventorySystem;
     
     public Sale() {
-        this.saleTime = LocalTime.now();
+        this.saleTime = LocalTime.now().withNano(0);
         this.saleInfo = new SaleDTO(saleTime, 0, 0, null, 0);
         this.scannedItems = new ArrayList<>();
     }
