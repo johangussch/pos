@@ -7,24 +7,25 @@
 package se.kth.iv1350.pos.view;
 
 import se.kth.iv1350.pos.controller.Controller;
-import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
 
 /**
 *
  */
 public class View {
-    private Controller contr;
+    private Controller controller;
     private Sale sale;
     
-    public View(Controller contr){
-        this.contr = contr;
+    public View(Controller controller){
+        this.controller = controller;
+        this.sale = new Sale(); // Initialize the 'sale' object TEMPORÄR FÖR DET FUNKAR YEAH
     }
-    
-    public void runFakeExecution(){
-        contr.createNewSale();
-        System.out.println("A new bitch has been created!");
 
+
+    public void runFakeExecution(){
+        controller.createNewSale();
+        System.out.println("A new bitch has been created!");
+        
         System.out.println("Time of sale: " + sale.saleTime);
     }
 }
