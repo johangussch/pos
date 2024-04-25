@@ -19,13 +19,6 @@ public class InventorySystem {
     public InventorySystem(){
         
     }
-
-    public void addItem() {
-        this.storeItems[0] = new Item(1, new ItemDTO("Milk", 10, 2), 10);
-        this.storeItems[1] = new Item(2, new ItemDTO("Bread", 20, 3), 10);
-        this.itemDTOs[0] = new ItemDTO("Milk", 10, 2);
-        this.itemDTOs[1] = new ItemDTO("Bread", 20, 3);
-    }
     
     public Item fetchItem(int itemID){
         for (Item item : storeItems){

@@ -18,6 +18,7 @@ public class Controller {
     private Sale sale;
     private Item item;
     
+    // KLAR
     public void createNewSale(){
         this.sale = new Sale();
     }
@@ -28,7 +29,8 @@ public class Controller {
         if (item == null) return null;
 
         this.sale.listSoldltem(item, itemQuantity);
-        
+        this.sale.runningTotal += item.itemPrice * itemQuantity;
+
         SaleDTO saleInfo = this.sale.fetchSalelnfo();
 
         return saleInfo;

@@ -7,6 +7,7 @@
 package se.kth.iv1350.pos.model;
 
 import java.time.LocalTime;
+import java.util.*;
 
 /**
 *
@@ -15,10 +16,10 @@ public class SaleDTO {
     public LocalTime saleTime;
     public float totalPrice;
     public float totalVAT;
-    public Item[] items;
+    public List<Item> items;
     public float runningTotal;
  
-    public SaleDTO(LocalTime saleTime, float totalPrice, float totalVAT, Item[] items, float runningTotal) {
+    public SaleDTO(LocalTime saleTime, float totalPrice, float totalVAT, List<Item> items, float runningTotal) {
         this.saleTime = saleTime;
         this.totalPrice = totalPrice;
         this.totalVAT = totalVAT;
@@ -36,9 +37,5 @@ public class SaleDTO {
     
     public float fetchTotalVAT(){
         return this.totalVAT;
-    }
-    
-    public Item[] fetchItems(){
-        return this.items;
     }
 }

@@ -20,6 +20,6 @@ public class View {
     
     public void runFakeExecution(){
         contr.createNewSale();
-        System.out.println("A new sale has been started");
+        System.out.println("A new sale has been created!");
     }
 }
