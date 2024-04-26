@@ -12,7 +12,7 @@ package se.kth.iv1350.pos.model;
 public class Register {
     private float amount;
    
-    public Register(){
+    public Register() {
         this.amount = 0;
     }
     

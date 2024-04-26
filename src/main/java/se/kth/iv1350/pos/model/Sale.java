@@ -8,7 +8,7 @@ package se.kth.iv1350.pos.model;
 
 import java.time.LocalTime;
 import java.util.*;
-import se.kth.iv1350.pos.integration.InventorySystem;
+
 /**
 *
  */
@@ -19,8 +19,6 @@ public class Sale {
     public float totalPrice;
     public float totalVAT;
     public List<Item> scannedItems;
-    
-    private InventorySystem inventorySystem;
     
     public Sale() {
         this.saleTime = LocalTime.now().withNano(0);
