@@ -55,20 +55,4 @@ public class Sale {
     public List<Item> fetchItems(){
         return this.scannedItems;
     }
-    
-    /* 
-    
-    POTENTIELLA METODER ATT LÄGGA TILL:
-    
-    updatetotalprice
-    updatetotalvat
-    updateitems
-    getreceipt
-    isduplicateitem (alternatieve flow 3b)
-    additem
-    getsaleinfo
-    *getcustomeritemsquantity*
-    getitems
-    
-    */
 }

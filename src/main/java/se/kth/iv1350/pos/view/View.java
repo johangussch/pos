@@ -19,7 +19,7 @@ public class View {
 
     }
 
-    public void runFakeExecution(){
-        controller.createNewSale();
-    }
+    // public void runFakeExecution(){
+    //     controller.createNewSale();
+    // }
 }

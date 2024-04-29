@@ -36,6 +36,7 @@ public class ControllerTest {
 
     @Test
     public void testEnterPayment() {
+        System.out.println("ENTERS enterPayment");
         instance.createNewSale();
         float paidAmount = 10;
         List<Item> boughtItems = new ArrayList<>();

@@ -7,12 +7,15 @@
 package se.kth.iv1350.pos.integration;
 import se.kth.iv1350.pos.model.Sale;
 import se.kth.iv1350.pos.model.*;
+import se.kth.iv1350.pos.controller.*;
 
 /**
 *
  */
 
 public class Receipt {
+    private Controller controller;
+
     public Receipt(){
         
     }
@@ -32,6 +35,6 @@ public class Receipt {
         System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
         System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
     
-        System.out.println("\nChange to give the customer : " + (sale.paidAmount - sale.totalPrice) + " SEK");
+        System.out.println("\nChange to give the customer : " + controller.enterPayment(sale.paidAmount) + " SEK");
     }
 }

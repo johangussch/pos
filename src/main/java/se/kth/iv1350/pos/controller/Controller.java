@@ -20,7 +20,6 @@ public class Controller {
     private Item item = new Item(0, null, 0);
     private ItemDTO itemDTO = new ItemDTO(null, 0, 0);
     private Receipt receipt = new Receipt();
-    private float paidAmount = 0;
     
     public void createNewSale(){
         this.sale = new Sale();
@@ -38,7 +37,7 @@ public class Controller {
         return this.sale.fetchSalelnfo();
     }
     
-    public void enterPayment(float paidAmount){
+    public float enterPayment(float paidAmount){
         float change = paidAmount - this.sale.totalPrice;
 
         if (change > 0) { 
@@ -47,6 +46,7 @@ public class Controller {
             register.increaseAmount(paidAmount);
         }
         
+        return change;
     }
     
     public float endSale(float paidAmount){

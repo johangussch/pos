@@ -1,62 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.model.SaleDTOTest" time="0.001" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.model.SaleDTOTest" time="0" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\andre\Desktop\pos\target\test-classes;C:\Users\andre\Desktop\pos\target\classes;C:\Users\andre\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\andre\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\andre\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\andre\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\andre\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\andre\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;"/>
-    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/test-classes:/Users/johangustafsson/Documents/GitHub/pos/target/classes:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/Users/johangustafsson/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://adoptium.net/"/>
-    <property name="user.timezone" value="Europe/Stockholm"/>
-    <property name="os.name" value="Windows 11"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SE"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\andre\AppData\Local\Temp\surefire11848640452819974426\surefirebooter3091976962364517193.jar C:\Users\andre\AppData\Local\Temp\surefire11848640452819974426 2024-04-29T15-12-54_405-jvmRun1 surefire3136002137895535913tmp surefire_08598198030508757014tmp"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter13910816705072518621.jar /Users/johangustafsson/Documents/GitHub/pos/target/surefire 2024-04-29T17-36-33_953-jvmRun1 surefire3670824644140833856tmp surefire_07121490811535983191tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\andre\Desktop\pos\target\test-classes;C:\Users\andre\Desktop\pos\target\classes;C:\Users\andre\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2.jar;C:\Users\andre\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2-win.jar;C:\Users\andre\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\andre\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\andre\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\andre\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\andre\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\andre\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;"/>
+    <property name="surefire.test.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/test-classes:/Users/johangustafsson/Documents/GitHub/pos/target/classes:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/Users/johangustafsson/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\andre"/>
-    <property name="user.language" value="sv"/>
+    <property name="user.home" value="/Users/johangustafsson"/>
+    <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-04-16"/>
-    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\andre\Desktop\pos"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/johangustafsson/Documents/GitHub/pos"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\andre\AppData\Local\Temp\surefire11848640452819974426\surefirebooter3091976962364517193.jar"/>
-    <property name="user.script" value=""/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter13910816705072518621.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.3+9-LTS"/>
-    <property name="user.name" value="andre"/>
-    <property name="stdout.encoding" value="Cp1252"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.2"/>
+    <property name="user.name" value="johangustafsson"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4.1"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Temurin-21.0.3+9"/>
-    <property name="localRepository" value="C:\Users\andre\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
-    <property name="java.io.tmpdir" value="C:\Users\andre\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.3"/>
-    <property name="user.dir" value="C:\Users\andre\Desktop\pos"/>
-    <property name="os.arch" value="amd64"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/johangustafsson/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/wy/2t11gdlj4nz8h_2ld7wvj1v00000gn/T/"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="/Users/johangustafsson/Documents/GitHub/pos"/>
+    <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\andre\AppData\Local\Microsoft\WindowsApps;C:\Windows\AtlasModules;C:\Windows\AtlasModules\Apps;C:\Windows\AtlasModules\Other;C:\Windows\AtlasModules\Tools;C:\Windows\AtlasModules\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\MinGW\bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\apache-maven\bin;C:\Users\andre\miniconda3;C:\Users\andre\miniconda3\Library\mingw-w64\bin;C:\Users\andre\miniconda3\Library\usr\bin;C:\Users\andre\miniconda3\Library\bin;C:\Users\andre\miniconda3\Scripts;C:\Users\andre\.cargo\bin;C:\Users\andre\AppData\Local\Microsoft\WindowsApps;C:\Users\andre\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\andre\AppData\Roaming\npm;C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\Scripts;C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\Scripts;C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\Scripts;C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Program Files\JetBrains\CLion 2023.3.3\bin;;C:\Users\andre\AppData\Local\Programs\Ollama;C:\Users\andre\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/johangustafsson/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Eclipse Adoptium"/>
-    <property name="java.vm.version" value="21.0.3+9-LTS"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="21.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
   <testcase name="testFetchTotalPrice" classname="se.kth.iv1350.pos.model.SaleDTOTest" time="0"/>
