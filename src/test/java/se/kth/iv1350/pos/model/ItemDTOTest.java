@@ -1,0 +1,41 @@
+package se.kth.iv1350.pos.model;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+
+public class ItemDTOTest {
+    private ItemDTO instance;
+
+    @BeforeEach
+    public void setUp() {
+        instance = new ItemDTO("Bananana", 1000, 100);
+    }
+
+    @Test
+    public void testFetchItemDescription() {
+        String expResult = "Bananana";
+        String result = instance.fetchItemDescription();
+        assertEquals(expResult, result, "Item description was not fetched");
+    }
+
+    @Test
+    public void testFetchItemPrice() {
+        float expResult = 1000;
+        float result = instance.fetchItemPrice();
+        assertEquals(expResult, result, "Item price was not fetched");
+    }
+
+    @Test
+    public void testFetchItemVAT() {
+        float expResult = 100;
+        float result = instance.fetchItemVAT();
+        assertEquals(expResult, result, "Item VAT was not fetched");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        instance = null;
+    }
+}

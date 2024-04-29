@@ -6,18 +6,32 @@
 
 package se.kth.iv1350.pos.integration;
 import se.kth.iv1350.pos.model.Sale;
+import se.kth.iv1350.pos.model.*;
 
 /**
 *
  */
 
 public class Receipt {
-    
     public Receipt(){
         
     }
 
     public void printReceipt(Sale sale){
-        System.out.println("Receipt printed - Under the water blublub");
+        System.out.println("- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
+        System.out.println("Time of Sale : " + sale.saleTime + "\n");
+        for (Item item : sale.scannedItems) {
+            item = sale.scannedItems.get(item.itemID);
+            System.out.println(item.itemDTO.itemDescription + " " + item.fetchItemQuantity() + " x " + item.itemDTO.itemPrice + " " + item.itemDTO.itemPrice * item.itemQuantity + " SEK");
+        }
+        System.out.println("\nObject-Oriented Design, IV1350 Seminar 3, Implementation");
+        System.out.println("Total : " + sale.totalPrice + " SEK");
+        System.out.println("VAT : " + sale.totalVAT + " SEK");
+
+        System.out.println("\nCash: " + sale.paidAmount + " SEK");
+        System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
+        System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
+    
+        System.out.println("\nChange to give the customer : " + (sale.paidAmount - sale.totalPrice) + " SEK");
     }
 }

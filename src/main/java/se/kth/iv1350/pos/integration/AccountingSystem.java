@@ -12,10 +12,10 @@ import java.util.*;
  */
 public class AccountingSystem {
     public float balance;
-    private List<Item> soldItems = new ArrayList<>();
+    public List<Item> soldItems = new ArrayList<>();
     
     public AccountingSystem(){
-        
+        this.balance = 0;
     }
     
     public void recordSoldItem(List<Item> boughtItems){

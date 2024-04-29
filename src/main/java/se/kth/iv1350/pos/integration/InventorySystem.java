@@ -6,7 +6,6 @@
 
 package se.kth.iv1350.pos.integration;
 import java.util.*;
-
 import se.kth.iv1350.pos.model.Item;
 import se.kth.iv1350.pos.model.ItemDTO;
 
@@ -18,10 +17,6 @@ public class InventorySystem {
     private List<ItemDTO> itemDTOs = new ArrayList<>();
 
     public InventorySystem(){
-        
-    }
-
-    public void addItem() {
         this.storeItems.add(new Item(1, new ItemDTO("Milk", 10, 2), 10));
         this.storeItems.add(new Item(2, new ItemDTO("Bread", 20, 3), 10));
         this.itemDTOs.add(new ItemDTO("Milk", 10, 2));

@@ -1,0 +1,47 @@
+package se.kth.iv1350.pos.integration;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import se.kth.iv1350.pos.model.Item;
+import java.util.ArrayList;
+import java.util.List;
+
+public class InventorySystemTest {
+    private InventorySystem instance;
+
+    @BeforeEach
+    public void setUp() {
+        instance = new InventorySystem();
+    }
+
+    @Test
+    public void testFetchItem() {
+        int itemID = 1;
+        Item item = instance.fetchItem(itemID);
+        assertNotNull(item, "Item was not fetched");
+    }
+
+    @Test
+    public void testUpdateQuantity() {
+        int itemID = 1;
+        int newQuantity = 5;
+        instance.updateQuantity(itemID, newQuantity);
+        assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
+    }
+
+    @Test
+    public void testUpdateInventory() {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(1, null, 1));
+        instance.updateInventory(items);
+        assertEquals(9, instance.fetchItem(1).fetchItemQuantity(), "Inventory was not updated");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        instance = null;
+    }
+
+}
