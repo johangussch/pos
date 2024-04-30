@@ -10,13 +10,13 @@ package se.kth.iv1350.pos.model;
 *
  */
 public class Register {
-    public float amount;
+    public double amount;
    
     public Register() {
         this.amount = 0;
     }
     
-    public void increaseAmount(float amount){
+    public void increaseAmount(double amount){
         this.amount += amount;
     }
 }

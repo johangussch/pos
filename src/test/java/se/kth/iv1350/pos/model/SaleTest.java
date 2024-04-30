@@ -15,8 +15,8 @@ public class SaleTest {
 
     @Test
     public void testFetchRunningTotal() {
-        float expResult = 0;
-        float result = instance.fetchRunningTotal();
+        double expResult = 0;
+        double result = instance.fetchRunningTotal();
         assertEquals(expResult, result, "Running total was not fetched");
     }
 

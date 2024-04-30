@@ -37,8 +37,8 @@ public class Controller {
         return this.sale.fetchSalelnfo();
     }
     
-    public float enterPayment(float paidAmount){
-        float change = paidAmount - this.sale.totalPrice;
+    public double enterPayment(double paidAmount){
+        double change = paidAmount - this.sale.totalPrice;
 
         if (change > 0) { 
             register.increaseAmount(paidAmount - change);
@@ -49,7 +49,7 @@ public class Controller {
         return change;
     }
     
-    public float endSale(float paidAmount){
+    public double endSale(double paidAmount){
         this.sale.totalPrice = this.sale.runningTotal + this.sale.totalVAT;
         this.sale.paidAmount = paidAmount;
         if (sale.scannedItems != null) {

@@ -13,12 +13,12 @@ import java.util.*;
  */
 public class SaleDTO {
     public String saleTime;
-    public float totalPrice;
-    public float totalVAT;
+    public double totalPrice;
+    public double totalVAT;
     public List<Item> items;
-    public float runningTotal;
+    public double runningTotal;
  
-    public SaleDTO(String saleTime, float totalPrice, float totalVAT, List<Item> items, float runningTotal) {
+    public SaleDTO(String saleTime, double totalPrice, double totalVAT, List<Item> items, double runningTotal) {
         this.saleTime = saleTime;
         this.totalPrice = totalPrice;
         this.totalVAT = totalVAT;
@@ -30,11 +30,11 @@ public class SaleDTO {
         return this.saleTime;
     }
     
-    public float fetchTotalPrice(){
+    public double fetchTotalPrice(){
         return this.totalPrice;
     }
     
-    public float fetchTotalVAT(){
+    public double fetchTotalVAT(){
         return this.totalVAT;
     }
 }

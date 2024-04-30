@@ -28,7 +28,7 @@ public class AccountingSystemTest {
 
     @Test
     public void testIfUpdateBalanceActuallyWorksOrIfItDoesntWorkDependingOnWhatMoodItIsAtToday() {
-        float amount = 100;
+        double amount = 100;
         instance.updateBalance(amount);
         assertEquals(100, instance.balance, "Balance was not updated");
     }

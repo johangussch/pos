@@ -38,7 +38,7 @@ public class ControllerTest {
     public void testEnterPayment() {
         System.out.println("ENTERS enterPayment");
         instance.createNewSale();
-        float paidAmount = 10;
+        double paidAmount = 10;
         List<Item> boughtItems = new ArrayList<>();
         boughtItems.add(new Item(1, null, 1));
         instance.enterPayment(paidAmount);
@@ -48,8 +48,8 @@ public class ControllerTest {
     @Test
     public void testIfEndSaleActuallyEndsTheSaleOrIfItGoesToExpressoHouseAndOrdersAnCoffeeLikeAnCompleteLeifIdiot() {
         instance.createNewSale();
-        float expResult = 0;
-        float result = instance.endSale(0);
+        double expResult = 0;
+        double result = instance.endSale(0);
         assertEquals(expResult, result, "Sale was not ended");
     }
     

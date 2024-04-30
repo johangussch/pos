@@ -11,10 +11,10 @@ package se.kth.iv1350.pos.model;
  */
 public class ItemDTO {
     public String itemDescription;
-    public float itemPrice;
-    public float itemVAT;
+    public double itemPrice;
+    public double itemVAT;
     
-    public ItemDTO(String itemDescription, float itemPrice, float itemVAT){
+    public ItemDTO(String itemDescription, double itemPrice, double itemVAT){
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
         this.itemVAT = itemVAT;
@@ -24,11 +24,11 @@ public class ItemDTO {
         return this.itemDescription;
     }
     
-    public float fetchItemPrice(){
+    public double fetchItemPrice(){
         return this.itemPrice;
     }
     
-    public float fetchItemVAT(){
-        return this.itemVAT;
+    public double fetchItemVAT(){
+        return this.itemPrice * 0.12;
     }
 }

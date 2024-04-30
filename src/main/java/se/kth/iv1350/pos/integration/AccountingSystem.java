@@ -11,7 +11,7 @@ import java.util.*;
 *
  */
 public class AccountingSystem {
-    public float balance;
+    public double balance;
     public List<Item> soldItems = new ArrayList<>();
     
     public AccountingSystem(){
@@ -24,7 +24,7 @@ public class AccountingSystem {
         }
     }
     
-    public void updateBalance(float amount){
+    public void updateBalance(double amount){
         this.balance += amount;
     }
 }

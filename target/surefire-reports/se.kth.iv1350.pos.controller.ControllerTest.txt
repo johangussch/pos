@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: se.kth.iv1350.pos.controller.ControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in se.kth.iv1350.pos.controller.ControllerTest
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in se.kth.iv1350.pos.controller.ControllerTest
 testPrint  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.controller.Controller.enterPayment(float)" because "this.controller" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.controller.Controller.enterPayment(double)" because "this.controller" is null
 	at se.kth.iv1350.pos.controller.ControllerTest.testPrint(ControllerTest.java:59)
 

@@ -16,11 +16,11 @@ import java.util.*;
 public class Sale {
     public String saleTime;
     public SaleDTO saleInfo;
-    public float runningTotal;
-    public float totalPrice;
-    public float totalVAT;
+    public double runningTotal;
+    public double totalPrice;
+    public double totalVAT;
     public List<Item> scannedItems;
-    public float paidAmount;
+    public double paidAmount;
 
 
     public Sale() {
@@ -31,7 +31,7 @@ public class Sale {
         this.runningTotal = 0;
     }
     
-    public float fetchRunningTotal(){
+    public double fetchRunningTotal(){
         return this.runningTotal;
     }
 

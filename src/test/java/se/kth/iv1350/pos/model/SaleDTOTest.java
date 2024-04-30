@@ -22,15 +22,15 @@ public class SaleDTOTest {
 
     @Test
     public void testFetchTotalPrice() {
-        float expResult = 1000;
-        float result = instance.fetchTotalPrice();
+        double expResult = 1000;
+        double result = instance.fetchTotalPrice();
         assertEquals(expResult, result, "Total price is not the same.");
     }
 
     @Test
     public void testFetchTotalVAT() {
-        float expResult = 100;
-        float result = instance.fetchTotalVAT();
+        double expResult = 100;
+        double result = instance.fetchTotalVAT();
         assertEquals(expResult, result, "Total VAT is not the same.");
     }
 

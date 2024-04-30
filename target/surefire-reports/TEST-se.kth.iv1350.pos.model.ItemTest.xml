@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.model.ItemTest" time="0.003" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.model.ItemTest" time="0" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SE"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter13910816705072518621.jar /Users/johangustafsson/Documents/GitHub/pos/target/surefire 2024-04-29T17-36-33_953-jvmRun1 surefire3670824644140833856tmp surefire_07121490811535983191tmp"/>
+    <property name="sun.java.command" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter16940295925881941724.jar /Users/johangustafsson/Documents/GitHub/pos/target/surefire 2024-04-30T10-21-54_585-jvmRun1 surefire7738008364146020118tmp surefire_09052995301201500540tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/test-classes:/Users/johangustafsson/Documents/GitHub/pos/target/classes:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/Users/johangustafsson/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter13910816705072518621.jar"/>
+    <property name="surefire.real.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter16940295925881941724.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.2"/>
@@ -58,7 +58,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testFetchItemID" classname="se.kth.iv1350.pos.model.ItemTest" time="0.001"/>
+  <testcase name="testFetchItemID" classname="se.kth.iv1350.pos.model.ItemTest" time="0"/>
   <testcase name="testFetchItemDTO" classname="se.kth.iv1350.pos.model.ItemTest" time="0"/>
-  <testcase name="testFetchItemQuantity" classname="se.kth.iv1350.pos.model.ItemTest" time="0.001"/>
+  <testcase name="testFetchItemQuantity" classname="se.kth.iv1350.pos.model.ItemTest" time="0"/>
 </testsuite>
