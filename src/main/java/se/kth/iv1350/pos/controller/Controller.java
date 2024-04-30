@@ -7,7 +7,6 @@
 package se.kth.iv1350.pos.controller;
 import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
-import java.util.*;
 
 /**
 *

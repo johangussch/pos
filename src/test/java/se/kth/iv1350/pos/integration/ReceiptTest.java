@@ -15,17 +15,16 @@ public class ReceiptTest {
     @BeforeEach
     public void setUp() {
         instance = new Receipt();
-    }
-
-    @Test
-    public void testPrintReceipt() {
-        ItemDTO itemDTO = new ItemDTO("Banananaa", 100, 1);
-        ItemDTO itemDTO2 = new ItemDTO("Abble", 10, 2);
+        ItemDTO itemDTO = new ItemDTO("Banananaa", 100, 0);
+        ItemDTO itemDTO2 = new ItemDTO("Abble", 10, 0);
         sale.listSoldItem(new Item(0, itemDTO, 1), 1);
         sale.listSoldItem(new Item(1, itemDTO2, 2), 2);
         sale.listSoldItem(new Item(0, itemDTO, 1), 3);
         sale.paidAmount = 1000;
+    }
 
+    @Test
+    public void testPrintReceipt() {
         instance.printReceipt(sale);
         assertNotNull(sale, "Receipt was not printed");
     }
