@@ -12,25 +12,17 @@ import java.util.List;
 public class AccountingSystemTest {
     private AccountingSystem instance;
 
-
     @BeforeEach
     public void setUp() {
         instance = new AccountingSystem();
     }
 
     @Test
-    public void testIfRecordSoldItemActuallyWorksOrIfItDoesntWorkDependingOnWhatMoodItIsAtToday() {
+    public void testRecordSoldItem() {
         List<Item> boughtItems = new ArrayList<>();
         boughtItems.add(new Item(1, null, 1));
         instance.recordSoldItem(boughtItems);
         assertNotNull(instance.soldItems, "Item was not recorded");
-    }
-
-    @Test
-    public void testIfUpdateBalanceActuallyWorksOrIfItDoesntWorkDependingOnWhatMoodItIsAtToday() {
-        double amount = 100;
-        instance.updateBalance(amount);
-        assertEquals(100, instance.balance, "Balance was not updated");
     }
 
     @AfterEach

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import se.kth.iv1350.pos.model.Item;
-import se.kth.iv1350.pos.model.Sale;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,6 @@ public class ControllerTest {
 
     @Test
     public void testEnterPayment() {
-        System.out.println("ENTERS enterPayment");
         instance.createNewSale();
         double paidAmount = 10;
         List<Item> boughtItems = new ArrayList<>();
@@ -46,7 +44,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void testIfEndSaleActuallyEndsTheSaleOrIfItGoesToExpressoHouseAndOrdersAnCoffeeLikeAnCompleteLeifIdiot() {
+    public void testEndSale() {
         instance.createNewSale();
         double expResult = 0;
         double result = instance.endSale(0);

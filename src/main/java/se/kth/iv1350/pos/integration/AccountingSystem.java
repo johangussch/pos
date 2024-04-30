@@ -23,8 +23,4 @@ public class AccountingSystem {
             soldItems.add(new Item(item.fetchItemID(), item.fetchItemDTO(), item.fetchItemQuantity()));
         }
     }
-    
-    public void updateBalance(double amount){
-        this.balance += amount;
-    }
 }
