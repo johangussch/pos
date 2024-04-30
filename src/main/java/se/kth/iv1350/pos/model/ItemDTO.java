@@ -29,6 +29,6 @@ public class ItemDTO {
     }
     
     public double fetchItemVAT(){
-        return this.itemPrice * 0.12;
+        return this.itemVAT;
     }
 }

@@ -14,7 +14,7 @@ public class RegisterTest {
     }
 
     @Test
-    public void testIncreaseAmount() {
+    public void testIncreaseAmountInRegisterHandlingTheSale() {
         double amount = 100;
         instance.increaseAmount(amount);
         assertEquals(100, instance.amount, "Amount was not increased");

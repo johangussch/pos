@@ -10,7 +10,7 @@ import se.kth.iv1350.pos.model.Item;
 import se.kth.iv1350.pos.model.ItemDTO;
 
 /**
-*
+* The database containing the items in the store.
  */
 public class InventorySystem {
     private List<Item> storeItems = new ArrayList<>();
@@ -22,7 +22,13 @@ public class InventorySystem {
         this.itemDTOs.add(new ItemDTO("Milk", 10, 2));
         this.itemDTOs.add(new ItemDTO("Bread", 20, 3));
     }
-    
+
+    /**
+    * Ends the sale instance, saving the total price and paid amount of the sale to  and updating
+    *
+    * @param boughtItems The customer's bought items are recorded to be used when ending the sale.
+    * @return 
+    */
     public Item fetchItem(int itemID){
         for (Item item : storeItems){
             if (item.fetchItemID() == itemID) return item;
@@ -38,6 +44,11 @@ public class InventorySystem {
         }
     }
 
+    /**
+	 * Updates the inventory based on the items sold in the sale.
+     * 
+	 * @param items The items that are to be updated with in the inventory.
+	 */
     public void updateInventory(List<Item> items){
         for (Item item : items){
             for (Item storeItem : storeItems){

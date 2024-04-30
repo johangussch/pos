@@ -12,14 +12,9 @@ import se.kth.iv1350.pos.controller.Controller;
 *
  */
 public class View {
-    private Controller controller;
+    public Controller controller;
     
     public View(Controller controller){
         this.controller = controller;
-
     }
-
-    // public void runFakeExecution(){
-    //     controller.createNewSale();
-    // }
 }

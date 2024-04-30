@@ -44,6 +44,7 @@ public class Sale {
             this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
             this.runningTotal += item.fetchItemDTO().fetchItemPrice() * itemQuantity;
             this.totalPrice = this.runningTotal + this.totalVAT;
+            
             if (scannedItem.fetchItemID() == (item.fetchItemID())) {
                 scannedItems.set(scannedItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.fetchItemQuantity() + itemQuantity));
                 return;

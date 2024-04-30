@@ -19,13 +19,13 @@ public class ControllerTest {
     }
     
     @Test
-    public void testCreateNewSale() {
+    public void testCreateNewSaleCreatesTheSaleInstance() {
         instance.createNewSale();
         assertNotNull(instance.sale, "Sale was not created");
     }
 
     @Test
-    public void testEnterItem() {
+    public void testEnterItemFetchesCorrectSaleInfo() {
         instance.createNewSale();
         int itemID = 1;
         int itemQuantity = 1;
@@ -34,7 +34,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void testEnterPayment() {
+    public void testEnterPaymentReturnsCorrectChange() {
         instance.createNewSale();
         double paidAmount = 10;
         List<Item> boughtItems = new ArrayList<>();
@@ -44,7 +44,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void testEndSale() {
+    public void testEndSaleEndsTheSaleInstance() {
         instance.createNewSale();
         double expResult = 0;
         double result = instance.endSale(0);
@@ -52,7 +52,7 @@ public class ControllerTest {
     }
     
     @Test
-    public void testPrint() {
+    public void testPrintPrintsTheReceipt() {
         instance.createNewSale();
         instance.print();
         assertNotNull(instance.sale, "Receipt was not printed");

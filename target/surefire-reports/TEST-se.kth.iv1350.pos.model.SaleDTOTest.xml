@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SE"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter7351688605285700144.jar /Users/johangustafsson/Documents/GitHub/pos/target/surefire 2024-04-30T10-50-13_673-jvmRun1 surefire992234855390446682tmp surefire_01565827107138916657tmp"/>
+    <property name="sun.java.command" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter3429907716450218028.jar /Users/johangustafsson/Documents/GitHub/pos/target/surefire 2024-04-30T14-02-23_536-jvmRun1 surefire2019128152262188753tmp surefire_08472445296464204302tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/test-classes:/Users/johangustafsson/Documents/GitHub/pos/target/classes:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-controls/13.0.2/javafx-controls-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-graphics/13.0.2/javafx-graphics-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2.jar:/Users/johangustafsson/.m2/repository/org/openjfx/javafx-base/13.0.2/javafx-base-13.0.2-mac.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/Users/johangustafsson/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/johangustafsson/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/Users/johangustafsson/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter7351688605285700144.jar"/>
+    <property name="surefire.real.class.path" value="/Users/johangustafsson/Documents/GitHub/pos/target/surefire/surefirebooter3429907716450218028.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.2"/>

@@ -13,7 +13,7 @@ import se.kth.iv1350.pos.view.View;
 *
  */
 public class Main {
-  
+    
     public static void main(String[] args){
         Controller contr = new Controller();
         View view = new View(contr);
