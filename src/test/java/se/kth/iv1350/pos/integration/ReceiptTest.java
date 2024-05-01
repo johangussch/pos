@@ -15,8 +15,8 @@ public class ReceiptTest {
     @BeforeEach
     public void setUp() {
         instance = new Receipt();
-        ItemDTO itemDTO = new ItemDTO("Banananaa", 100, 0);
-        ItemDTO itemDTO2 = new ItemDTO("Apple", 10, 0);
+        ItemDTO itemDTO = new ItemDTO("Daddys Banana", "Extra long banana", 100, 0);
+        ItemDTO itemDTO2 = new ItemDTO("Daddys Adams Apple", "Used apple 3%", 10, 0);
         sale.listSoldItem(new Item(0, itemDTO, 1), 1);
         sale.listSoldItem(new Item(1, itemDTO2, 2), 2);
         sale.listSoldItem(new Item(0, itemDTO, 1), 3);

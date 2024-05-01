@@ -29,14 +29,14 @@ public class SaleTest {
 
     @Test   
     public void testListSoldItem() {
-        Item item = new Item(1, new ItemDTO("Banana", 1000, 100), 1);
+        Item item = new Item(1, new ItemDTO("Long banana", "Banana 3 bites", 1000, 100), 1);
         instance.listSoldItem(item, 1);
         assertTrue(instance.fetchItems().contains(item), "Item was not added to list");
     }
 
     @Test
     public void testFetchItems() {
-        Item item = new Item(2, new ItemDTO("Banana", 1000, 100), 1);
+        Item item = new Item(2, new ItemDTO("Long banana", "Banana 3 bites", 1000, 100), 1);
         instance.listSoldItem(item, 1);
         assertTrue(instance.fetchItems().contains(item), "Items were not fetched");
     }

@@ -17,10 +17,10 @@ public class InventorySystem {
     private List<ItemDTO> itemDTOs = new ArrayList<>();
 
     public InventorySystem(){
-        this.storeItems.add(new Item(1, new ItemDTO("Milk", 10, 2), 10));
-        this.storeItems.add(new Item(2, new ItemDTO("Bread", 20, 3), 10));
-        this.itemDTOs.add(new ItemDTO("Milk", 10, 2));
-        this.itemDTOs.add(new ItemDTO("Bread", 20, 3));
+        this.storeItems.add(new Item(1, new ItemDTO("Mommas Milk", "Milk 3% FAT", 10, 2), 10));
+        this.storeItems.add(new Item(2, new ItemDTO("Daddys Bread", "Bread LOW CALORIES", 20, 3), 10));
+        this.itemDTOs.add(new ItemDTO("Mommas Milk", "Milk 3% FAT", 10, 2));
+        this.itemDTOs.add(new ItemDTO("Daddys Bread", "Bread LOW CALORIES", 20, 3));
     }
 
     /**

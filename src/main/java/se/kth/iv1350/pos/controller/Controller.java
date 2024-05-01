@@ -17,9 +17,9 @@ public class Controller {
     private Register register = new Register();
     public Sale sale;
     private Item item = new Item(0, null, 0);
-    private ItemDTO itemDTO = new ItemDTO(null, 0, 0);
+    private ItemDTO itemDTO = new ItemDTO(null, null, 0, 0);
     private Receipt receipt = new Receipt();
-    
+
     /**
     * Creates a new sale instance.
     */
@@ -41,7 +41,17 @@ public class Controller {
         this.sale.listSoldItem(item, itemQuantity);
         this.sale.runningTotal += itemDTO.itemPrice * itemQuantity;
         this.sale.totalVAT += itemDTO.itemVAT * itemQuantity;
-        
+
+        System.out.println("Add " + itemQuantity + " item with item id " + itemID + " :");
+        System.out.println("Item ID : " + itemID);
+        System.out.println("Item Name : " + itemDTO.fetchItemName());
+        System.out.println("Item cost : " + itemDTO.fetchItemPrice() + " SEK");
+        System.out.println("Item VAT : " + itemDTO.fetchItemVAT() + " %");
+        System.out.println("Item Description : " + itemDTO.fetchItemDescription());
+
+        System.out.println("\nTotal cost ( incl VAT ): " + this.sale.totalPrice + " SEK");
+        System.out.println("Total VAT : " + this.sale.totalVAT + " SEK");
+
         return this.sale.fetchSalelnfo();
     }
     
@@ -49,9 +59,8 @@ public class Controller {
     * Handles the customer's payment of the sale.
     *
     * @param paidAmount The customer's payment amount for the sale.
-    * @return The change to be returned to the customer.
     */
-    public double enterPayment(double paidAmount){
+    public void enterPayment(double paidAmount){
         double change = paidAmount - this.sale.totalPrice;
 
         if (change > 0) { 
@@ -59,8 +68,9 @@ public class Controller {
         } else {
             register.increaseAmount(paidAmount);
         }
+
+        System.out.println("Change to give the customer : " + change + " SEK");
         
-        return change;
     }
     
     /**
@@ -72,11 +82,29 @@ public class Controller {
     public double endSale(double paidAmount){
         this.sale.totalPrice = this.sale.runningTotal + this.sale.totalVAT;
         this.sale.paidAmount = paidAmount;
-
+        
+        System.out.println("\nEnd sale :");
+        System.out.println("Total cost ( incl VAT ) : " + this.sale.totalPrice + " SEK");
+        System.out.println("\nCustomer pays : " + paidAmount + " SEK :");
+        
         if (sale.scannedItems != null) {
+            
             accountingSystem.recordSoldItem(sale.scannedItems);
+            System.out.println("Sent sale info to external accounting system.");
+            
             inventorySystem.updateInventory(sale.scannedItems);
+            if (sale.scannedItems.size() == 0) {
+                System.out.println("No items were scanned. No info sent to external inventory system.");
+            }
+            for (int i = 0; i < sale.scannedItems.size(); i++) {
+                System.out.println("Told external inventory system to decrease inventory quantity of item " + sale.scannedItems.get(i) + ".");
+            }
+            
+        
         }
+
+
+
         return this.sale.totalPrice;
     } 
     

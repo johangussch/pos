@@ -10,12 +10,19 @@ public class ItemDTOTest {
 
     @BeforeEach
     public void setUp() {
-        instance = new ItemDTO("Bananana", 1000, 100);
+        instance = new ItemDTO("Mommas testbanana", "Used condition", 1000, 100);
+    }
+
+    @Test
+    public void testFetchItemName() {
+        String expResult = "Mommas testbanana";
+        String result = instance.fetchItemName();
+        assertEquals(expResult, result, "Item name was not fetched");
     }
 
     @Test
     public void testFetchItemDescription() {
-        String expResult = "Bananana";
+        String expResult = "Used condition";
         String result = instance.fetchItemDescription();
         assertEquals(expResult, result, "Item description was not fetched");
     }

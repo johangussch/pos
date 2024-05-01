@@ -12,15 +12,12 @@ import se.kth.iv1350.pos.model.*;
 */
 
 public class Receipt {
-
     /**
-	 * Prints the receipt of the sale.
+     * Prints the receipt of the sale.
      * 
-	 * @param sale The information of the entire sale.
+     * @param sale The information of the entire sale.
 	 */
     public void printReceipt(Sale sale){
-        //skriv resten som ska vara över being receipt
-
         System.out.println("\n- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
         System.out.println("Time of Sale : " + sale.saleTime + "\n");
 
@@ -35,7 +32,5 @@ public class Receipt {
         System.out.println("\nCash: " + sale.paidAmount + " SEK");
         System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
         System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
-    
-        System.out.println("\nChange to give the customer : " + "controller.enterPayment(sale.paidAmount)" + " SEK\n");
     }
 }

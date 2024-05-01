@@ -10,14 +10,20 @@ package se.kth.iv1350.pos.model;
 *
  */
 public class ItemDTO {
+    public String itemName;
     public String itemDescription;
     public double itemPrice;
     public double itemVAT;
     
-    public ItemDTO(String itemDescription, double itemPrice, double itemVAT){
+    public ItemDTO(String itemName, String itemDescription, double itemPrice, double itemVAT){
+        this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
         this.itemVAT = itemVAT;
+    }
+
+    public String fetchItemName(){
+        return this.itemName;
     }
 
     public String fetchItemDescription(){
