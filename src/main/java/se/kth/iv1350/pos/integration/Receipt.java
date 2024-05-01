@@ -21,8 +21,8 @@ public class Receipt {
         System.out.println("\n- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
         System.out.println("Time of Sale : " + sale.saleTime + "\n");
 
-        for (Item item : sale.scannedItems) {
-            item = sale.scannedItems.get(item.itemID);
+        for (Item item : sale.soldItems) {
+            item = sale.soldItems.get(item.itemID);
             System.out.println(item.itemDTO.itemDescription + " " + item.fetchItemQuantity() + " x " + item.itemDTO.itemPrice + " " + item.itemDTO.itemPrice * item.itemQuantity + " SEK");
         }
         System.out.println("\nObject-Oriented Design, IV1350 Seminar 3, Implementation");

@@ -18,10 +18,10 @@ public class AccountingSystemTest {
     }
 
     @Test
-    public void testRecordSoldItem() {
-        List<Item> boughtItems = new ArrayList<>();
-        boughtItems.add(new Item(1, null, 1));
-        instance.recordSoldItem(boughtItems);
+    public void testRecordSoldItemAddsBoughtsItemToSoldItems() {
+        List<Item> soldItems = new ArrayList<>();
+        soldItems.add(new Item(1, null, 1));
+        instance.recordSoldItem(soldItems);
         assertNotNull(instance.soldItems, "Item was not recorded");
     }
 

@@ -37,8 +37,8 @@ public class ControllerTest {
     public void testEnterPaymentReturnsCorrectChange() {
         instance.createNewSale();
         double paidAmount = 10;
-        List<Item> boughtItems = new ArrayList<>();
-        boughtItems.add(new Item(1, null, 1));
+        List<Item> soldItems = new ArrayList<>();
+        soldItems.add(new Item(1, null, 1));
         instance.enterPayment(paidAmount);
         assertNotNull(instance.sale, "Payment was not entered");
     }

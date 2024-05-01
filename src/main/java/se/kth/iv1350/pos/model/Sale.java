@@ -19,7 +19,7 @@ public class Sale {
     public double runningTotal;
     public double totalPrice;
     public double totalVAT;
-    public List<Item> scannedItems;
+    public List<Item> soldItems;
     public double paidAmount;
 
 
@@ -27,7 +27,7 @@ public class Sale {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.saleTime = LocalDateTime.now().withNano(0).format(formatter);
         this.saleInfo = new SaleDTO(saleTime, 0, 0, null, 0);
-        this.scannedItems = new ArrayList<>();
+        this.soldItems = new ArrayList<>();
         this.runningTotal = 0;
     }
     
@@ -40,20 +40,20 @@ public class Sale {
     }
 
     public void listSoldItem(Item item, int itemQuantity){
-        for (Item scannedItem : scannedItems) {
+        for (Item scannedItem : soldItems) {
             this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
             this.runningTotal += item.fetchItemDTO().fetchItemPrice() * itemQuantity;
             this.totalPrice = this.runningTotal + this.totalVAT;
             
             if (scannedItem.fetchItemID() == (item.fetchItemID())) {
-                scannedItems.set(scannedItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.fetchItemQuantity() + itemQuantity));
+                soldItems.set(soldItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.fetchItemQuantity() + itemQuantity));
                 return;
             }
         }
-        this.scannedItems.add(item);
+        this.soldItems.add(item);
     }
     
     public List<Item> fetchItems(){
-        return this.scannedItems;
+        return this.soldItems;
     }
 }

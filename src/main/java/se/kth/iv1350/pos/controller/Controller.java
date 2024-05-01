@@ -87,23 +87,18 @@ public class Controller {
         System.out.println("Total cost ( incl VAT ) : " + this.sale.totalPrice + " SEK");
         System.out.println("\nCustomer pays : " + paidAmount + " SEK :");
         
-        if (sale.scannedItems != null) {
-            
-            accountingSystem.recordSoldItem(sale.scannedItems);
+        if (sale.soldItems != null) {
+            accountingSystem.recordSoldItem(sale.soldItems);
             System.out.println("Sent sale info to external accounting system.");
             
-            inventorySystem.updateInventory(sale.scannedItems);
-            if (sale.scannedItems.size() == 0) {
+            inventorySystem.updateInventory(sale.soldItems);
+            if (sale.soldItems.size() == 0) {
                 System.out.println("No items were scanned. No info sent to external inventory system.");
             }
-            for (int i = 0; i < sale.scannedItems.size(); i++) {
-                System.out.println("Told external inventory system to decrease inventory quantity of item " + sale.scannedItems.get(i) + ".");
+            for (int i = 0; i < sale.soldItems.size(); i++) {
+                System.out.println("Told external inventory system to decrease inventory quantity of item " + sale.soldItems.get(i) + ".");
             }
-            
-        
         }
-
-
 
         return this.sale.totalPrice;
     } 

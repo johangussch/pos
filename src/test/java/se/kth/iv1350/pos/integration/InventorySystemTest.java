@@ -17,14 +17,14 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void testFetchItem() {
+    public void testFetchItemReturnsCorrectItemBasonOnItemID() {
         int itemID = 1;
         Item item = instance.fetchItem(itemID);
         assertNotNull(item, "Item was not fetched");
     }
 
     @Test
-    public void testUpdateQuantity() {
+    public void testUpdateQuantityUpdatesStoreItemsWithCorrectItem() {
         int itemID = 1;
         int newQuantity = 5;
         instance.updateQuantity(itemID, newQuantity);
@@ -32,7 +32,7 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void testUpdateInventory() {
+    public void testUpdateInventoryReducesItemQuantityBasedOnSoldItems() {
         List<Item> items = new ArrayList<>();
         items.add(new Item(1, null, 1));
         instance.updateInventory(items);

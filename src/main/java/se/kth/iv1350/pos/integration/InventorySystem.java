@@ -24,10 +24,10 @@ public class InventorySystem {
     }
 
     /**
-    * Ends the sale instance, saving the total price and paid amount of the sale to  and updating
+    * Fetches the information for the scanned item based on its ID.
     *
-    * @param boughtItems The customer's bought items are recorded to be used when ending the sale.
-    * @return 
+    * @param itemID The scanned item's ID.
+    * @return The scanned item's information.
     */
     public Item fetchItem(int itemID){
         for (Item item : storeItems){
@@ -36,6 +36,11 @@ public class InventorySystem {
         return null;
     }
 
+    /**
+    * Updates the store's inventory with a specified item.
+    *
+    * @param itemID,newQuantity 
+    */
     public void updateQuantity(int itemID, int newQuantity){
         Item item = fetchItem(itemID);
 
@@ -45,7 +50,7 @@ public class InventorySystem {
     }
 
     /**
-	 * Updates the inventory based on the items sold in the sale.
+	 * Reduces the inventory's quantity of the items sold in the sale.
      * 
 	 * @param items The items that are to be updated with in the inventory.
 	 */

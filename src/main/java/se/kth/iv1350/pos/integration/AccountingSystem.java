@@ -22,10 +22,10 @@ public class AccountingSystem {
     /**
     * Records the sold items to be used when updating the accounting system.
     *
-    * @param boughtItems The customer's bought items of the sale.
+    * @param soldItems The customer's bought items of the sale.
     */
-    public void recordSoldItem(List<Item> boughtItems){
-        for (Item item : boughtItems) {
+    public void recordSoldItem(List<Item> soldItems){
+        for (Item item : soldItems) {
             soldItems.add(new Item(item.fetchItemID(), item.fetchItemDTO(), item.fetchItemQuantity()));
         }
     }
