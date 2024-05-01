@@ -28,7 +28,7 @@ public class Controller {
     }
 
     /**
-    * Records the item(s) being sold by updating the inventory and sale information.
+    * Lists the item(s) being sold by updating the inventory and sale information.
     *
     * @param itemID,itemQuantity The scanned item's ID and its quantity to be bought.
     * @return The sale information of the newly scanned item.
