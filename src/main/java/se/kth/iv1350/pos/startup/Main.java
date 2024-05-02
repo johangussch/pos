@@ -10,12 +10,16 @@ import se.kth.iv1350.pos.controller.Controller;
 import se.kth.iv1350.pos.view.View;
 
 /**
-*
+* The main class which starts the program.
  */
 public class Main {
     
+    /**
+     * The main method which starts the program.
+     * @param args The arguments passed to the program.
+     */
     public static void main(String[] args){
         Controller contr = new Controller();
-        View view = new View(contr);
+        new View(contr);
     }
 }

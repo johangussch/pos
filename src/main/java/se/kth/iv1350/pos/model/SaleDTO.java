@@ -9,7 +9,7 @@ package se.kth.iv1350.pos.model;
 import java.util.*;
 
 /**
-*
+* Represents a sale's information in the store.
  */
 public class SaleDTO {
     public String saleTime;
@@ -18,6 +18,14 @@ public class SaleDTO {
     public List<Item> items;
     public double runningTotal;
  
+    /**
+     * Creates an instance of a sale with the specified parameters.
+     * @param saleTime The time of the sale.
+     * @param totalPrice The total price of the sale.
+     * @param totalVAT The total VAT of the sale.
+     * @param items The items of the sale.
+     * @param runningTotal The running total of the sale.
+     */
     public SaleDTO(String saleTime, double totalPrice, double totalVAT, List<Item> items, double runningTotal) {
         this.saleTime = saleTime;
         this.totalPrice = totalPrice;
@@ -26,14 +34,26 @@ public class SaleDTO {
         this.runningTotal = runningTotal;
     }
     
+    /**
+     * Fetches the time of the sale.
+     * @return The time of the sale.
+     */
     public String fetchSaleTime(){
         return this.saleTime;
     }
     
+    /**
+     * Fetches the total price of the sale.
+     * @return The total price of the sale.
+     */
     public double fetchTotalPrice(){
         return this.totalPrice;
     }
     
+    /**
+     * Fetches the total VAT of the sale.
+     * @return The total VAT of the sale.
+     */
     public double fetchTotalVAT(){
         return this.totalVAT;
     }

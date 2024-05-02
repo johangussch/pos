@@ -14,21 +14,21 @@ public class SaleDTOTest {
     }
 
     @Test
-    public void testFetchSaleTime() {
+    public void testFetchSaleTimeFetchesCorrectSaleTime() {
         String expResult = "2021-05-20 12:00:00";
         String result = instance.fetchSaleTime();
         assertEquals(expResult, result, "Sale time is not the same.");
     }
 
     @Test
-    public void testFetchTotalPrice() {
+    public void testFetchTotalPriceFetchesCorrectTotalPrice() {
         double expResult = 1000;
         double result = instance.fetchTotalPrice();
         assertEquals(expResult, result, "Total price is not the same.");
     }
 
     @Test
-    public void testFetchTotalVAT() {
+    public void testFetchTotalVATFetchesCorrectTotalVAT() {
         double expResult = 100;
         double result = instance.fetchTotalVAT();
         assertEquals(expResult, result, "Total VAT is not the same.");

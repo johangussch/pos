@@ -14,28 +14,28 @@ public class SaleTest {
     }
 
     @Test
-    public void testFetchRunningTotal() {
+    public void testFetchRunningTotalFetchesCorrectRunningTotal() {
         double expResult = 0;
         double result = instance.fetchRunningTotal();
         assertEquals(expResult, result, "Running total was not fetched");
     }
 
     @Test
-    public void testFetchSaleInfo() {
+    public void testFetchSaleInfoFetchesCorrectSaleInfo() {
         SaleDTO expResult = instance.saleInfo;
         SaleDTO result = instance.fetchSalelnfo();
         assertEquals(expResult, result, "Sale info was not fetched");
     }
 
     @Test   
-    public void testListSoldItem() {
+    public void testListSoldItemFetchesCorrectSoldItem() {
         Item item = new Item(1, new ItemDTO("Long banana", "Banana 3 bites", 1000, 100), 1);
         instance.listSoldItem(item, 1);
         assertTrue(instance.fetchItems().contains(item), "Item was not added to list");
     }
 
     @Test
-    public void testFetchItems() {
+    public void testFetchItemsFetchesCorrectItem() {
         Item item = new Item(2, new ItemDTO("Long banana", "Banana 3 bites", 1000, 100), 1);
         instance.listSoldItem(item, 1);
         assertTrue(instance.fetchItems().contains(item), "Items were not fetched");

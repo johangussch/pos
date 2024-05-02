@@ -7,7 +7,7 @@
 package se.kth.iv1350.pos.model;
 
 /**
-*
+* Represents an item in the inventory.
  */
 public class Item {
     public int itemID;
@@ -20,14 +20,23 @@ public class Item {
         this.itemQuantity = itemQuantity;
     }
     
+    /*
+     * Fetches the itemID of the item.
+     */
     public int fetchItemID(){
         return this.itemID;
     }
     
+    /*
+     * Fetches the itemDTO of the item.
+     */
     public ItemDTO fetchItemDTO(){
         return this.itemDTO;
     }
     
+    /*
+     * Fetches the itemQuantity of the item.
+     */
     public int fetchItemQuantity(){
         return this.itemQuantity;
     }

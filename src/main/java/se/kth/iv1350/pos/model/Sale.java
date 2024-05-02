@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
-*
+* Represents a sale in the store.
  */
 public class Sale {
     public String saleTime;
@@ -22,7 +22,9 @@ public class Sale {
     public List<Item> soldItems;
     public double paidAmount;
 
-
+    /**
+     * Creates an instance of a sale with the specified parameters.
+     */
     public Sale() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.saleTime = LocalDateTime.now().withNano(0).format(formatter);
@@ -31,14 +33,26 @@ public class Sale {
         this.runningTotal = 0;
     }
     
+    /**
+     * @return The total running price of the sale.
+     */
     public double fetchRunningTotal(){
         return this.runningTotal;
     }
 
+    /**
+     * @return The total price of the sale.
+     */
     public SaleDTO fetchSalelnfo(){
         return this.saleInfo;
     }
 
+    /**
+     * Fetches the total price of the sale, and returns it.
+     * @param item The item that is to be added to the sale.
+     * @param itemQuantity The quantity of the item that is to be added to the sale.
+     * @return The total price of the sale.
+     */
     public void listSoldItem(Item item, int itemQuantity){
         for (Item scannedItem : soldItems) {
             this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
@@ -53,6 +67,9 @@ public class Sale {
         this.soldItems.add(item);
     }
     
+    /**
+     * @return Fetches the total price of the sale, and returns it.
+     */
     public List<Item> fetchItems(){
         return this.soldItems;
     }

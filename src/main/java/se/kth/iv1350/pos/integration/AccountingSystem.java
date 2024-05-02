@@ -15,6 +15,9 @@ public class AccountingSystem {
     public List<Item> soldItems = new ArrayList<>();
     
 
+    /**
+     * Creates an instance of the accounting system with the specified parameters.
+     */
     public AccountingSystem(){
         this.balance = 0;
     }
@@ -22,11 +25,11 @@ public class AccountingSystem {
     /**
     * Records the sold items to be used when updating the accounting system.
     *
-    * @param soldItems The customer's bought items of the sale.
+    * @param itemsToBeRecorded Items that should be recorded to soldItems.
     */
-    public void recordSoldItem(List<Item> soldItems){
-        for (Item item : soldItems) {
-            soldItems.add(new Item(item.fetchItemID(), item.fetchItemDTO(), item.fetchItemQuantity()));
+    public void recordSoldItem(List<Item> itemsToBeRecorded){
+        for (Item item : itemsToBeRecorded) {
+            this.soldItems.add(new Item(item.fetchItemID(), item.fetchItemDTO(), item.fetchItemQuantity()));
         }
     }
 }

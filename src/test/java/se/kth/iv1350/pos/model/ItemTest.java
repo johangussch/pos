@@ -14,21 +14,21 @@ public class ItemTest {
     }
 
     @Test
-    public void testFetchItemID() {
+    public void testFetchItemIDReturnsCorrectItemID() {
         int expResult = 1;
         int result = instance.fetchItemID();
         assertEquals(expResult, result, "Item ID was not fetched");
     }
 
     @Test
-    public void testFetchItemDTO() {
+    public void testFetchItemDTOReturnsCorrectItemDTO() {
         ItemDTO expResult = null;
         ItemDTO result = instance.fetchItemDTO();
         assertEquals(expResult, result, "Item DTO was not fetched");
     }
 
     @Test
-    public void testFetchItemQuantity() {
+    public void testFetchItemQuantityReturnsCorrectItemQuantity() {
         int expResult = 1;
         int result = instance.fetchItemQuantity();
         assertEquals(expResult, result, "Item quantity was not fetched");
