@@ -39,7 +39,8 @@ public class InventorySystem {
     /**
     * Updates the store's inventory with a specified item.
     *
-    * @param itemID,newQuantity 
+    * @param itemID The scanned item's ID.
+    * @param newQuantity The new quantity of the already scanned item.
     */
     public void updateQuantity(int itemID, int newQuantity){
         Item item = fetchItem(itemID);

@@ -30,7 +30,8 @@ public class Controller {
     /**
     * Lists the item(s) being sold by updating the inventory and sale information.
     *
-    * @param itemID,itemQuantity The scanned item's ID and its quantity to be bought.
+    * @param itemID The scanned item's ID.
+    * @param itemQuantity  The scanned item's quantity.
     * @return The sale information of the newly scanned item.
     */
     public SaleDTO enterItem(int itemID, int itemQuantity){
