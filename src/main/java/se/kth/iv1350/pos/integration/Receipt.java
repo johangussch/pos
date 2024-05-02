@@ -31,6 +31,6 @@ public class Receipt {
 
         System.out.println("\nCash: " + sale.paidAmount + " SEK");
         System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
-        System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
+        System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - - -");
     }
 }
