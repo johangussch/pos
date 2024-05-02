@@ -34,6 +34,13 @@ public class Sale {
     }
     
     /**
+     * @return The total price of the sale.
+     */
+    public SaleDTO fetchSalelnfo(){
+        return this.saleInfo;
+    }
+
+    /**
      * @return The total running price of the sale.
      */
     public double fetchRunningTotal(){
@@ -41,12 +48,19 @@ public class Sale {
     }
 
     /**
-     * @return The total price of the sale.
+     * @return The total total price of the sale.
      */
-    public SaleDTO fetchSalelnfo(){
-        return this.saleInfo;
+    public double fetchTotalPrice() {
+        return this.totalPrice;
     }
 
+    /**
+     * @return The total VAT of the sale.
+     */
+    public double fetchTotalVAT() {
+        return this.totalVAT;
+    }
+    
     /**
      * Fetches the total price of the sale, and returns it.
      * @param item The item that is to be added to the sale.

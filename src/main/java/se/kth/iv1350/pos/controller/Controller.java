@@ -49,8 +49,8 @@ public class Controller {
         System.out.println("Item VAT : " + itemDTO.fetchItemVAT() + " %");
         System.out.println("Item Description : " + itemDTO.fetchItemDescription());
 
-        System.out.println("\nTotal cost ( incl VAT ): " + this.sale.totalPrice + " SEK");
-        System.out.println("Total VAT : " + this.sale.totalVAT + " SEK");
+        System.out.println("\nTotal cost ( incl VAT ): " + sale.fetchTotalPrice() + " SEK");
+        System.out.println("Total VAT : " + sale.fetchTotalVAT() + " SEK");
 
         return this.sale.fetchSalelnfo();
     }
@@ -80,11 +80,11 @@ public class Controller {
     * @return The sale's total price (to be presented on screen, not implemented).
     */
     public double endSale(double paidAmount){
-        this.sale.totalPrice = this.sale.runningTotal + this.sale.totalVAT;
+        this.sale.totalPrice = sale.fetchRunningTotal() + sale.fetchTotalVAT();
         this.sale.paidAmount = paidAmount;
         
         System.out.println("\nEnd sale :");
-        System.out.println("Total cost ( incl VAT ) : " + this.sale.totalPrice + " SEK");
+        System.out.println("Total cost ( incl VAT ) : " + sale.fetchTotalPrice() + " SEK");
         System.out.println("\nCustomer pays : " + paidAmount + " SEK :");
         
         if (sale.soldItems != null) {

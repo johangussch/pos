@@ -23,7 +23,7 @@ public class Register {
      * Fetches the amount of the register.
      * @param amount The amount of the register.
      **/
-    public void increaseAmount(double amount){
-        this.amount += amount;
+    public void increaseAmount(double paidAmount){
+        this.amount += paidAmount;
     }
 }
