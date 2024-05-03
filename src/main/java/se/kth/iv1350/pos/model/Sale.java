@@ -68,17 +68,31 @@ public class Sale {
      * @return The total price of the sale.
      */
     public void listSoldItem(Item item, int itemQuantity){
+        System.out.println("Add " + itemQuantity + " item with item id " + item.itemID + " :");
+        System.out.println("Item ID : " + item.itemID);
+        System.out.println("Item Name : " + item.itemDTO.fetchItemName());
+        System.out.println("Item cost : " + item.itemDTO.fetchItemPrice() + " SEK");
+        System.out.println("Item VAT : " + item.itemDTO.fetchItemVAT() + " %");
+        System.out.println("Item Description : " + item.itemDTO.fetchItemDescription());
+        
+        int itemAlreadyAdded = 0;
         for (Item scannedItem : soldItems) {
-            this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
-            this.runningTotal += item.fetchItemDTO().fetchItemPrice() * itemQuantity;
-            this.totalPrice = this.runningTotal + this.totalVAT;
-            
             if (scannedItem.fetchItemID() == (item.fetchItemID())) {
-                soldItems.set(soldItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.fetchItemQuantity() + itemQuantity));
-                return;
+                soldItems.set(soldItems.indexOf(scannedItem), new Item(item.fetchItemID(), item.fetchItemDTO(), scannedItem.itemQuantity + itemQuantity));
+                itemAlreadyAdded = 1;
             }
         }
-        this.soldItems.add(item);
+        
+        if (itemAlreadyAdded == 0) {
+            this.soldItems.add(new Item(item.itemID, item.fetchItemDTO(), itemQuantity));
+        }
+
+        this.runningTotal += item.fetchItemDTO().fetchItemPrice() * itemQuantity;
+        this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
+        this.totalPrice = this.runningTotal + this.totalVAT;
+
+        System.out.println("\nTotal cost ( incl VAT ): " + this.runningTotal + " SEK");
+        System.out.println("Total VAT : " + this.totalVAT + " SEK");
     }
     
     /**

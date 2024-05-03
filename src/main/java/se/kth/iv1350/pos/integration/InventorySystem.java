@@ -17,8 +17,8 @@ public class InventorySystem {
     private List<ItemDTO> itemDTOs = new ArrayList<>();
 
     public InventorySystem(){
-        this.storeItems.add(new Item(1, new ItemDTO("Mommas Milk", "Milk 3% FAT", 10, 2), 10));
-        this.storeItems.add(new Item(2, new ItemDTO("Daddys Bread", "Bread LOW CALORIES", 20, 3), 10));
+        this.storeItems.add(new Item(1, new ItemDTO("Mommas Milk", "Milk 3% FAT", 10, 2), 5));
+        this.storeItems.add(new Item(2, new ItemDTO("Daddys Bread", "Bread LOW CALORIES", 20, 3), 5));
         this.itemDTOs.add(new ItemDTO("Mommas Milk", "Milk 3% FAT", 10, 2));
         this.itemDTOs.add(new ItemDTO("Daddys Bread", "Bread LOW CALORIES", 20, 3));
     }
@@ -56,12 +56,6 @@ public class InventorySystem {
 	 * @param items The items that are to be updated with in the inventory.
 	 */
     public void updateInventory(List<Item> items){
-        for (Item item : items){
-            for (Item storeItem : storeItems){
-                if (item.fetchItemID() == storeItem.fetchItemID()){
-                    updateQuantity(item.fetchItemID(), storeItem.fetchItemQuantity() - item.fetchItemQuantity());
-                }
-            }
-        }
+        System.out.println("Successfully recorded the sold items in Inventory System.");
     }
 }

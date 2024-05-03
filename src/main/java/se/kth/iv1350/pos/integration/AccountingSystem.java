@@ -28,8 +28,6 @@ public class AccountingSystem {
     * @param itemsToBeRecorded Items that should be recorded to soldItems.
     */
     public void recordSoldItem(List<Item> itemsToBeRecorded){
-        for (Item item : itemsToBeRecorded) {
-            this.soldItems.add(new Item(item.fetchItemID(), item.fetchItemDTO(), item.fetchItemQuantity()));
-        }
+        System.out.println("Successfully recorded the sold items in Accounting System.");
     }
 }

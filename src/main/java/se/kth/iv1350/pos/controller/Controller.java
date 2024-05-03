@@ -40,18 +40,8 @@ public class Controller {
         if (item == null) return null;
 
         this.sale.listSoldItem(item, itemQuantity);
-        this.sale.runningTotal += itemDTO.itemPrice * itemQuantity;
-        this.sale.totalVAT += itemDTO.itemVAT * itemQuantity;
 
-        System.out.println("Add " + itemQuantity + " item with item id " + itemID + " :");
-        System.out.println("Item ID : " + itemID);
-        System.out.println("Item Name : " + itemDTO.fetchItemName());
-        System.out.println("Item cost : " + itemDTO.fetchItemPrice() + " SEK");
-        System.out.println("Item VAT : " + itemDTO.fetchItemVAT() + " %");
-        System.out.println("Item Description : " + itemDTO.fetchItemDescription());
-
-        System.out.println("\nTotal cost ( incl VAT ): " + sale.fetchTotalPrice() + " SEK");
-        System.out.println("Total VAT : " + sale.fetchTotalVAT() + " SEK");
+        
 
         return this.sale.fetchSalelnfo();
     }
@@ -81,6 +71,7 @@ public class Controller {
     * @return The sale's total price (to be presented on screen, not implemented).
     */
     public double endSale(double paidAmount){
+        System.out.println("Total cost for end sale is: " + sale.fetchTotalPrice() + sale.fetchTotalVAT() + " SEK");
         this.sale.totalPrice = sale.fetchRunningTotal() + sale.fetchTotalVAT();
         this.sale.paidAmount = paidAmount;
         
@@ -90,7 +81,6 @@ public class Controller {
         
         if (sale.soldItems != null) {
             accountingSystem.recordSoldItem(sale.soldItems);
-            System.out.println("Sent sale info to external accounting system.");
             
             inventorySystem.updateInventory(sale.soldItems);
             if (sale.soldItems.size() == 0) {

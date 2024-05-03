@@ -21,10 +21,11 @@ public class Receipt {
         System.out.println("\n- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
         System.out.println("Time of Sale : " + sale.saleTime + "\n");
 
-        for (Item item : sale.soldItems) {
-            item = sale.soldItems.get(item.itemID);
-            System.out.println(item.itemDTO.itemDescription + " " + item.fetchItemQuantity() + " x " + item.itemDTO.itemPrice + " " + item.itemDTO.itemPrice * item.itemQuantity + " SEK");
+        for (int i = 0; i < sale.soldItems.size(); i++) {
+            Item item = sale.soldItems.get(i);
+            System.out.println(item.itemDTO.itemName + " " + item.itemQuantity + " x " + item.itemDTO.itemPrice + " " + item.itemDTO.itemPrice * item.itemQuantity + " SEK");
         }
+
         System.out.println("\nObject-Oriented Design, IV1350 Seminar 3, Implementation");
         System.out.println("Total : " + sale.totalPrice + " SEK");
         System.out.println("VAT : " + sale.totalVAT + " SEK");
@@ -32,5 +33,7 @@ public class Receipt {
         System.out.println("\nCash: " + sale.paidAmount + " SEK");
         System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
         System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - - -");
+    
+        System.out.println("\nChange to give back to customer : " + (sale.paidAmount - sale.totalPrice) + " SEK");
     }
 }

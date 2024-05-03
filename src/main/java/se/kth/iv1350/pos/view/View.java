@@ -12,6 +12,10 @@ import se.kth.iv1350.pos.controller.Controller;
 * Represents the view of the program.
  */
 public class View {
+    
+    public View(){
+    }
+
     public Controller controller;
     
     /**
@@ -20,5 +24,15 @@ public class View {
      */
     public View(Controller controller){
         this.controller = controller;
+    }
+    
+    public void runFakeExecution(){
+        controller.createNewSale();
+        controller.enterItem(1, 2);
+        controller.enterItem(2, 1);
+        controller.enterItem(1, 4);
+        controller.enterPayment(1000);
+        controller.endSale(1000);
+        controller.print();
     }
 }

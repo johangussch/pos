@@ -13,13 +13,13 @@ import se.kth.iv1350.pos.view.View;
 * The main class which starts the program.
  */
 public class Main {
-    
     /**
      * The main method which starts the program.
      * @param args The arguments passed to the program.
      */
     public static void main(String[] args){
         Controller contr = new Controller();
-        new View(contr);
+        View view = new View(contr);
+        view.runFakeExecution();
     }
 }
