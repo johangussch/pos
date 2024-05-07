@@ -15,7 +15,7 @@ public class Controller {
     private InventorySystem inventorySystem = new InventorySystem();
     private AccountingSystem accountingSystem = new AccountingSystem();
     private Register register = new Register();
-    public Sale sale;
+    private Sale sale; // ändrad till private
     private Item item = new Item(0, null, 0);
     private ItemDTO itemDTO = new ItemDTO(null, null, 0, 0);
     private Receipt receipt = new Receipt();
