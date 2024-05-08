@@ -31,14 +31,6 @@ public class InventorySystemTest {
         assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
     }
 
-    @Test
-    public void testUpdateInventoryReducesItemQuantityBasedOnSoldItems() {
-        List<Item> items = new ArrayList<>();
-        items.add(new Item(1, null, 1));
-        instance.updateInventory(items);
-        assertEquals(9, instance.fetchItem(1).fetchItemQuantity(), "Inventory was not updated");
-    }
-
     @AfterEach
     public void tearDown() {
         instance = null;

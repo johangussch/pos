@@ -23,8 +23,10 @@ public class Controller {
     /**
     * Creates a new sale instance.
     */
-    public void createNewSale(){
+    public boolean createNewSale(){
         this.sale = new Sale();
+        if (this.sale == null) return false;
+        return true;
     }
 
     /**
@@ -41,8 +43,6 @@ public class Controller {
 
         this.sale.listSoldItem(item, itemQuantity);
 
-        
-
         return this.sale.fetchSalelnfo();
     }
     
@@ -51,7 +51,7 @@ public class Controller {
     *
     * @param paidAmount The customer's payment amount for the sale.
     */
-    public void enterPayment(double paidAmount){
+    public double enterPayment(double paidAmount){
         double change = paidAmount - this.sale.totalPrice;
 
         if (change > 0) { 
@@ -59,9 +59,7 @@ public class Controller {
         } else {
             register.increaseAmount(paidAmount);
         }
-
-        System.out.println("Change to give the customer : " + change + " SEK");
-        
+        return paidAmount;
     }
     
     /**
@@ -71,24 +69,13 @@ public class Controller {
     * @return The sale's total price (to be presented on screen, not implemented).
     */
     public double endSale(double paidAmount){
-        System.out.println("Total cost for end sale is: " + sale.fetchTotalPrice() + sale.fetchTotalVAT() + " SEK");
         this.sale.totalPrice = sale.fetchRunningTotal() + sale.fetchTotalVAT();
         this.sale.paidAmount = paidAmount;
         
-        System.out.println("\nEnd sale :");
-        System.out.println("Total cost ( incl VAT ) : " + sale.fetchTotalPrice() + " SEK");
-        System.out.println("\nCustomer pays : " + paidAmount + " SEK :");
         
         if (sale.soldItems != null) {
             accountingSystem.recordSoldItem(sale.soldItems);
-            
             inventorySystem.updateInventory(sale.soldItems);
-            if (sale.soldItems.size() == 0) {
-                System.out.println("No items were scanned. No info sent to external inventory system.");
-            }
-            for (int i = 0; i < sale.soldItems.size(); i++) {
-                System.out.println("Told external inventory system to decrease inventory quantity of item " + sale.soldItems.get(i) + ".");
-            }
         }
 
         return this.sale.totalPrice;
@@ -97,7 +84,9 @@ public class Controller {
     /**
     * Prints the receipt of the sale.
     */
-    public void print() {
-        receipt.printReceipt(this.sale);
+    public boolean print() {
+        boolean receiptPrinted = receipt.printReceipt(this.sale);
+    
+        return receiptPrinted;
     }
 }

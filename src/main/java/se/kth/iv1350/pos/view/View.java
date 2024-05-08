@@ -7,6 +7,7 @@
 package se.kth.iv1350.pos.view;
 
 import se.kth.iv1350.pos.controller.Controller;
+import se.kth.iv1350.pos.model.SaleDTO;
 
 /**
 * Represents the view of the program.
@@ -28,11 +29,35 @@ public class View {
     
     public void runFakeExecution(){
         controller.createNewSale();
-        controller.enterItem(1, 2);
-        controller.enterItem(2, 1);
-        controller.enterItem(1, 4);
-        controller.enterPayment(1000);
+        SaleDTO saleInfo = controller.enterItem(1, 2);
+        System.out.println("Add " + saleInfo.items.get(0).fetchItemQuantity() + " items with item id " + saleInfo.items.get(0).fetchItemID() + " :");
+        System.out.println("Item ID : " + saleInfo.items.get(0).fetchItemID());
+        System.out.println("Item Name : " + saleInfo.items.get(0).fetchItemDTO().fetchItemName());
+        System.out.println("Item Cost : " + saleInfo.items.get(0).fetchItemDTO().fetchItemPrice() + " SEK");
+        System.out.println("Item Description : " + saleInfo.items.get(0).fetchItemDTO().fetchItemDescription());
+        System.out.println("\nTotal Cost ( incl VAT ): " + saleInfo.totalPrice + " SEK");
+        System.out.println("Total VAT : " + saleInfo.totalVAT + " SEK");
+        
+        System.out.println("\nEnd Sale :");
+        System.out.println("Total cost ( incl VAT ) : " + saleInfo.totalPrice + " SEK");
+        double paidAmount = controller.enterPayment(100);
+        System.out.println("\nCustomer pays " + paidAmount + " SEK :");
         controller.endSale(1000);
+        System.out.println("\nSent sale info to external accounting system.");
+        System.out.println("Sent sale info to external inventory system.");
         controller.print();
+
+        System.out.println("\n- - - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
+        System.out.println("Time of sale : " + saleInfo.saleTime + "\n");
+        System.out.println(saleInfo.items.get(0).fetchItemDTO().fetchItemName() + " " + saleInfo.items.get(0).fetchItemQuantity() + " x " + saleInfo.items.get(0).fetchItemDTO().fetchItemPrice() + " " + saleInfo.items.get(0).fetchItemDTO().fetchItemPrice() * saleInfo.items.get(0).fetchItemQuantity() + " SEK");
+        System.out.println("\nObject-Oriented Design, IV1350 Seminar 3, Implementation");
+        System.out.println("Total : " + saleInfo.totalPrice + " SEK");
+        System.out.println("VAT : " + saleInfo.totalVAT + " SEK");
+
+        System.out.println("\nCash : " + paidAmount + " SEK");
+        System.out.println("Change : " + (paidAmount - saleInfo.totalPrice) + " SEK");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
+        
+        System.out.println("\nChange to give the customer : " + (paidAmount - saleInfo.totalPrice) + " SEK");
     }
 }

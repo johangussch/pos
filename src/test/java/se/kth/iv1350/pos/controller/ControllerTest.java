@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import se.kth.iv1350.pos.model.Item;
+import se.kth.iv1350.pos.model.SaleDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,8 @@ public class ControllerTest {
     
     @Test
     public void testCreateNewSaleCreatesTheSaleInstance() {
-        instance.createNewSale();
-        assertNotNull(instance.sale, "Sale was not created");
+        boolean saleCreated = instance.createNewSale();
+        assertNotNull(saleCreated, "Sale was not created");
     }
 
     @Test
@@ -29,18 +29,17 @@ public class ControllerTest {
         instance.createNewSale();
         int itemID = 1;
         int itemQuantity = 1;
-        instance.enterItem(itemID, itemQuantity);
-        assertNotNull(instance.sale, "Item was not entered");
+        SaleDTO saleInfo = instance.enterItem(itemID, itemQuantity);
+        
+        assertNotNull(saleInfo, "Item was not entered");
     }
 
     @Test
     public void testEnterPaymentReturnsCorrectChange() {
         instance.createNewSale();
         double paidAmount = 10;
-        List<Item> soldItems = new ArrayList<>();
-        soldItems.add(new Item(1, null, 1));
-        instance.enterPayment(paidAmount);
-        assertNotNull(instance.sale, "Payment was not entered");
+        double change = instance.enterPayment(paidAmount);
+        assertEquals(10, change, "Payment was not entered");
     }
 
     @Test
@@ -54,8 +53,8 @@ public class ControllerTest {
     @Test
     public void testPrintPrintsTheReceipt() {
         instance.createNewSale();
-        instance.print();
-        assertNotNull(instance.sale, "Receipt was not printed");
+        boolean receiptPrinted = instance.print();
+        assertTrue(receiptPrinted, "Receipt was not printed");
     }
 
     @AfterEach

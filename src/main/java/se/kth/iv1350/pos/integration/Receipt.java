@@ -17,8 +17,9 @@ public class Receipt {
      * 
      * @param sale The information of the entire sale.
 	 */
-    public void printReceipt(Sale sale){
-        System.out.println("\n- - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
+    public boolean printReceipt(Sale sale){
+        System.out.println("\nReceipt printing...");
+        /*System.out.println("\n- - - - - - - - - - - - - - - - - - - Begin receipt - - - - - - - - - - - - - - - - - - -");
         System.out.println("Time of Sale : " + sale.saleTime + "\n");
 
         for (int i = 0; i < sale.soldItems.size(); i++) {
@@ -32,8 +33,8 @@ public class Receipt {
 
         System.out.println("\nCash: " + sale.paidAmount + " SEK");
         System.out.println("Change: " + (sale.paidAmount - sale.totalPrice) + " SEK");
-        System.out.println("- - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - - -");
-    
-        System.out.println("\nChange to give back to customer : " + (sale.paidAmount - sale.totalPrice) + " SEK");
+        System.out.println("- - - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
+        */
+        return true;
     }
 }
