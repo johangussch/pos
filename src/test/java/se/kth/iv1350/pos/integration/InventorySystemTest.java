@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import se.kth.iv1350.pos.model.Item;
-import java.util.ArrayList;
-import java.util.List;
 
 public class InventorySystemTest {
     private InventorySystem instance;
@@ -31,9 +29,17 @@ public class InventorySystemTest {
         assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
     }
 
+    
+    @Test
+    void testFetchNonExistingItem(){
+        int itemID = 1;
+        assertThrows(NoItemIDFoundException.class, () -> {
+            instance.fetchItem(itemID);
+        });
+    }
+
     @AfterEach
     public void tearDown() {
         instance = null;
     }
-
 }
