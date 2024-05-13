@@ -29,11 +29,12 @@ public class InventorySystem {
     * @param itemID The scanned item's ID.
     * @return The scanned item's information.
     */
-    public Item fetchItem(int itemID){
+    public Item fetchItem(int itemID) throws NoItemIDFoundException{
         for (Item item : storeItems){
             if (item.fetchItemID() == itemID) return item;
         }
-        return null;
+            
+        throw new NoItemIDFoundException("Item ID not found.");
     }
 
     /**
@@ -42,7 +43,7 @@ public class InventorySystem {
     * @param itemID The scanned item's ID.
     * @param newQuantity The new quantity of the already scanned item.
     */
-    public void updateQuantity(int itemID, int newQuantity){
+    public void updateQuantity(int itemID, int newQuantity) throws NoItemIDFoundException{
         Item item = fetchItem(itemID);
 
         if (item != null) {
@@ -57,5 +58,22 @@ public class InventorySystem {
 	 */
     public void updateInventory(List<Item> items){
         System.out.println("Successfully recorded the sold items in Inventory System.");
+    }
+
+    /**
+	 * Sets the store items to null
+	 */
+    public void setStoreItemsToNull() throws DatabaseConnectionException{
+        storeItems = null;
+        throw new DatabaseConnectionException("Item ID not found.");
+    }
+
+    /**
+    * Fetches the store items.
+    *
+    * @return The store's items.
+    */
+    public List<Item> fetchStoreItems(){
+        return storeItems;
     }
 }

@@ -15,26 +15,24 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void testFetchItemReturnsCorrectItemBasonOnItemID() {
+    public void testFetchItemReturnsCorrectItemBasonOnItemID() throws NoItemIDFoundException {
         int itemID = 1;
         Item item = instance.fetchItem(itemID);
         assertNotNull(item, "Item was not fetched");
     }
 
     @Test
-    public void testUpdateQuantityUpdatesStoreItemsWithCorrectItem() {
+    public void testUpdateQuantityUpdatesStoreItemsWithCorrectItem() throws NoItemIDFoundException{
         int itemID = 1;
         int newQuantity = 5;
         instance.updateQuantity(itemID, newQuantity);
         assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
     }
 
-    
     @Test
-    void testFetchNonExistingItem(){
-        int itemID = 1;
+    void testFetchNonExistingItem() {
         assertThrows(NoItemIDFoundException.class, () -> {
-            instance.fetchItem(itemID);
+            instance.fetchItem(3412321);
         });
     }
 

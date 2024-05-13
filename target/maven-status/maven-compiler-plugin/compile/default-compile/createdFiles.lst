@@ -1,11 +1,13 @@
-se\kth\iv1350\pos\controller\Controller.class
 se\kth\iv1350\pos\model\ItemDTO.class
+se\kth\iv1350\pos\integration\DatabaseConnectionException.class
 se\kth\iv1350\pos\view\View.class
 se\kth\iv1350\pos\model\Register.class
-se\kth\iv1350\pos\startup\Main.class
 se\kth\iv1350\pos\integration\Receipt.class
-se\kth\iv1350\pos\model\Sale.class
 se\kth\iv1350\pos\integration\InventorySystem.class
 se\kth\iv1350\pos\model\SaleDTO.class
 se\kth\iv1350\pos\model\Item.class
 se\kth\iv1350\pos\integration\AccountingSystem.class
+se\kth\iv1350\pos\controller\Controller.class
+se\kth\iv1350\pos\startup\Main.class
+se\kth\iv1350\pos\model\Sale.class
+se\kth\iv1350\pos\integration\NoItemIDFoundException.class

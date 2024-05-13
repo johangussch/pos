@@ -1,6 +1,7 @@
 se\kth\iv1350\pos\model\ItemDTOTest.class
 se\kth\iv1350\pos\integration\InventorySystemTest.class
 se\kth\iv1350\pos\integration\ReceiptTest.class
+se\kth\iv1350\pos\integration\DatabaseConnectionExceptionTest.class
 se\kth\iv1350\pos\model\RegisterTest.class
 se\kth\iv1350\pos\model\SaleTest.class
 se\kth\iv1350\pos\integration\AccountingSystemTest.class

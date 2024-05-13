@@ -36,7 +36,7 @@ public class Controller {
     * @param itemQuantity  The scanned item's quantity.
     * @return The sale information of the newly scanned item.
     */
-    public SaleDTO enterItem(int itemID, int itemQuantity){
+    public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException{
         item = inventorySystem.fetchItem(itemID);
 
         if (item == null) return null;

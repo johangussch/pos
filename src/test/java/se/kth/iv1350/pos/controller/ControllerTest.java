@@ -4,6 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import se.kth.iv1350.pos.integration.DatabaseConnectionException;
+import se.kth.iv1350.pos.integration.NoItemIDFoundException;
 import se.kth.iv1350.pos.model.SaleDTO;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void testEnterItemFetchesCorrectSaleInfo() {
+    public void testEnterItemFetchesCorrectSaleInfo() throws NoItemIDFoundException{
         instance.createNewSale();
         int itemID = 1;
         int itemQuantity = 1;
