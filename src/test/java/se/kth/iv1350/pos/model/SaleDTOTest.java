@@ -10,7 +10,7 @@ public class SaleDTOTest {
 
     @BeforeEach
     public void setUp() {
-        instance = new SaleDTO("2021-05-20 12:00:00", 1000, 100, null, 1100);
+        instance = new SaleDTO("2021-05-20 12:00:00", 1000, 100, null, 1100, 0);
     }
 
     @Test
