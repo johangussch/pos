@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.integration.AccountingSystemTest" time="0.005" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.pos.integration.AccountingSystemTest" time="0.007" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Johan\AppData\Local\Temp\surefire3121250415936297049\surefirebooter4574471698066794460.jar C:\Users\Johan\AppData\Local\Temp\surefire3121250415936297049 2024-05-13T16-07-55_257-jvmRun1 surefire10142479258321218240tmp surefire_010985623413416192885tmp"/>
+    <property name="sun.java.command" value="C:\Users\Johan\AppData\Local\Temp\surefire12017030220408291569\surefirebooter14873235089225765955.jar C:\Users\Johan\AppData\Local\Temp\surefire12017030220408291569 2024-05-14T12-24-17_612-jvmRun1 surefire3912113398818950424tmp surefire_05636550925560222390tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Johan\Documents\GitHub\pos\target\test-classes;C:\Users\Johan\Documents\GitHub\pos\target\classes;C:\Users\Johan\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2.jar;C:\Users\Johan\.m2\repository\org\openjfx\javafx-controls\13.0.2\javafx-controls-13.0.2-win.jar;C:\Users\Johan\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2.jar;C:\Users\Johan\.m2\repository\org\openjfx\javafx-graphics\13.0.2\javafx-graphics-13.0.2-win.jar;C:\Users\Johan\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2.jar;C:\Users\Johan\.m2\repository\org\openjfx\javafx-base\13.0.2\javafx-base-13.0.2-win.jar;C:\Users\Johan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Johan\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Johan\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\Johan\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Johan\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Johan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Johan\AppData\Local\Temp\surefire3121250415936297049\surefirebooter4574471698066794460.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Johan\AppData\Local\Temp\surefire12017030220408291569\surefirebooter14873235089225765955.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.1+12-LTS-29"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testRecordSoldItemAddsBoughtsItemToSoldItems" classname="se.kth.iv1350.pos.integration.AccountingSystemTest" time="0.003"/>
+  <testcase name="testRecordSoldItemAddsBoughtsItemToSoldItems" classname="se.kth.iv1350.pos.integration.AccountingSystemTest" time="0.001"/>
 </testsuite>

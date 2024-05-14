@@ -32,7 +32,7 @@ public class InventorySystemTest {
     @Test
     void testFetchNonExistingItem() {
         assertThrows(NoItemIDFoundException.class, () -> {
-            instance.fetchItem(3412321);
+            instance.fetchItem(21);
         });
     }
 
