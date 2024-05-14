@@ -69,22 +69,14 @@ public class InventorySystem {
     }
 
     /**
-	 * Sets the store items to null
-	 */
-    public void setStoreItemsToNull(){
-        this.storeItems = null;
-    }
-
-    /**
     * Fetches the store items.
     *
     * @return The store's items.
+    * @throws DatabaseConnectionException If the store items are not found.
     */
     public List<Item> fetchStoreItems() throws DatabaseConnectionException{
         screenLogger.log("Failed while fetching store items.");
         fileLogger.log("Store items not found. Check Database connection.");
-        if (this.storeItems == null) throw new DatabaseConnectionException("Store items not found. Check Database connection.");
-        
-        return this.storeItems;
+        throw new DatabaseConnectionException("Store items not found. Check Database connection.");
     }
 }

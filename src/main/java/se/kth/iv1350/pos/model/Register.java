@@ -20,10 +20,18 @@ public class Register {
     }
     
     /**
-     * Fetches the amount of the register.
+     * Updates the amount in the register.
      * @param paidAmount The amount of the register.
      **/
     public void increaseAmount(double paidAmount){
         this.amount += paidAmount;
+    }
+
+    /**
+     * Gets the amount in the register.
+     * @return The amount in the register.
+     **/
+    public double fetchAmount(){
+        return this.amount;
     }
 }

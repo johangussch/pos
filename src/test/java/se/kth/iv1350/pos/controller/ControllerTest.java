@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import se.kth.iv1350.pos.integration.DatabaseConnectionException;
 import se.kth.iv1350.pos.integration.NoItemIDFoundException;
 import se.kth.iv1350.pos.model.SaleDTO;
 

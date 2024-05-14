@@ -7,6 +7,10 @@
 package se.kth.iv1350.pos.controller;
 import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
+import se.kth.iv1350.pos.util.*;
+import se.kth.iv1350.pos.view.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
 * The system the cashier interacts with in the pos scenario.
@@ -17,14 +21,16 @@ public class Controller {
     private Register register = new Register();
     private Sale sale;
     private Item item = new Item(0, null, 0);
-    //private ItemDTO itemDTO = new ItemDTO(null, null, 0, 0);
     private Receipt receipt = new Receipt();
+    private List<TotalRevenueObserver> totalRevenueObservers = new ArrayList<>();
+    private Logger logger;
 
     /**
     * Creates a new sale instance.
     */
     public boolean createNewSale(){
         this.sale = new Sale();
+        this.logger = new TotalRevenueFileOutputLogger();
         if (this.sale == null) return false;
         return true;
     }
@@ -59,7 +65,27 @@ public class Controller {
         } else {
             register.increaseAmount(paidAmount);
         }
+
+        notifyObservers();
+
         return paidAmount;
+    }
+
+    /**
+     * Notifies all observers of the total revenue.
+     */
+    public void notifyObservers() {
+        for (TotalRevenueObserver observer : totalRevenueObservers) {
+            observer.newTotalRevenue(this.sale.saleInfo.totalPrice);
+        }
+    }
+
+    /**
+     * Adds an observer to the list of observers.
+     * @param observer
+     */
+    public void addTotalRevenueObserver(TotalRevenueObserver observer) {
+        totalRevenueObservers.add(observer);
     }
     
     /**
@@ -77,6 +103,8 @@ public class Controller {
             accountingSystem.recordSoldItem(sale.soldItems);
             inventorySystem.updateInventory(sale.soldItems);
         }
+
+        logger.log("The sale " + this.sale.saleInfo.saleTime + " has ended. The total revenue is: " + this.sale.totalPrice + " SEK.");
 
         return this.sale.totalPrice;
     } 

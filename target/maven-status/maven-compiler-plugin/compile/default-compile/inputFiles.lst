@@ -2,7 +2,6 @@ C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\model\ItemDTO.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\startup\Main.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\util\ScreenLogger.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\model\Register.java
-C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\view\TotalRevenueView.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\controller\Controller.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\integration\NoItemIDFoundException.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\model\SaleDTO.java
@@ -10,8 +9,11 @@ C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\integration\Accountin
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\view\View.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\integration\Receipt.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\util\FileLogger.java
+C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\util\TotalRevenueFileOutputLogger.java
+C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\view\ConsoleTotalRevenueDisplay.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\integration\DatabaseConnectionException.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\model\Item.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\integration\InventorySystem.java
+C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\view\TotalRevenueObserver.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\model\Sale.java
 C:\Users\andre\Desktop\pos\src\main\java\se\kth\iv1350\pos\util\Logger.java

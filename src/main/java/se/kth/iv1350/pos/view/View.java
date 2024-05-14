@@ -7,7 +7,6 @@
 package se.kth.iv1350.pos.view;
 
 import se.kth.iv1350.pos.controller.Controller;
-import se.kth.iv1350.pos.integration.DatabaseConnectionException;
 import se.kth.iv1350.pos.integration.NoItemIDFoundException;
 import se.kth.iv1350.pos.model.SaleDTO;
 
@@ -26,9 +25,10 @@ public class View {
      */
     public View(Controller controller){
         this.controller = controller;
+        controller.addTotalRevenueObserver(new ConsoleTotalRevenueDisplay());
     }
     
-    public void runFakeExecution() throws NoItemIDFoundException{
+    public void runFakeExecution() throws NoItemIDFoundException {
         controller.createNewSale();
         SaleDTO saleInfo = controller.enterItem(1, 2);
         System.out.println("Add " + saleInfo.items.get(0).fetchItemQuantity() + " items with item id " + saleInfo.items.get(0).fetchItemID() + " :");

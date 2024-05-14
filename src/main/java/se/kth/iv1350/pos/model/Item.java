@@ -13,7 +13,14 @@ public class Item {
     public int itemID;
     public ItemDTO itemDTO;
     public int itemQuantity;
-    
+
+    /**
+     * Creates a new instance of an item.
+     *
+     * @param itemID The item's ID.
+     * @param itemDTO The item's information.
+     * @param itemQuantity The item's quantity.
+     */
     public Item(int itemID, ItemDTO itemDTO, int itemQuantity){
         this.itemID = itemID;
         this.itemDTO = itemDTO;
