@@ -21,6 +21,7 @@ public class Sale {
     public double totalVAT;
     public List<Item> soldItems;
     public double paidAmount;
+    public double change;
 
     /**
      * Creates an instance of a sale with the specified parameters.
@@ -28,7 +29,7 @@ public class Sale {
     public Sale() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.saleTime = LocalDateTime.now().withNano(0).format(formatter);
-        this.saleInfo = new SaleDTO(saleTime, 0, 0, null, 0);
+        this.saleInfo = new SaleDTO(saleTime, 0, 0, null, 0, 0);
         this.soldItems = new ArrayList<>();
         this.runningTotal = 0;
     }
@@ -60,6 +61,13 @@ public class Sale {
     public double fetchTotalVAT() {
         return this.totalVAT;
     }
+
+    /**
+     * @return The total change of the sale.
+     */
+    public double fetchChange() {
+        return this.change;
+    }
     
     /**
      * Fetches the total price of the sale, and returns it.
@@ -83,7 +91,7 @@ public class Sale {
         this.runningTotal += item.fetchItemDTO().fetchItemPrice() * itemQuantity;
         this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
         this.totalPrice = this.runningTotal + this.totalVAT;
-        this.saleInfo = new SaleDTO(this.saleTime, this.runningTotal, this.totalVAT, this.soldItems, this.totalPrice);
+        this.saleInfo = new SaleDTO(this.saleTime, this.runningTotal, this.totalVAT, this.soldItems, this.totalPrice, this.change);
     }
     
     /**

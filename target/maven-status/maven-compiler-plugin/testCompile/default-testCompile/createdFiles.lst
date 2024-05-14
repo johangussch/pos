@@ -5,6 +5,8 @@ se\kth\iv1350\pos\integration\DatabaseConnectionExceptionTest.class
 se\kth\iv1350\pos\model\RegisterTest.class
 se\kth\iv1350\pos\model\SaleTest.class
 se\kth\iv1350\pos\integration\AccountingSystemTest.class
+se\kth\iv1350\pos\util\FileLoggerTest.class
+se\kth\iv1350\pos\util\ScreenLoggerTest.class
 se\kth\iv1350\pos\model\SaleDTOTest.class
 se\kth\iv1350\pos\model\ItemTest.class
 se\kth\iv1350\pos\controller\ControllerTest.class

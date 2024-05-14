@@ -1,4 +1,4 @@
-package se.kth.iv1350.polymlogger;
+package se.kth.iv1350.pos.util;
 
 /**
  * Prints log messages to the screen.

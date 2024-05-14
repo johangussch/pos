@@ -15,9 +15,9 @@ public class Controller {
     private InventorySystem inventorySystem = new InventorySystem();
     private AccountingSystem accountingSystem = new AccountingSystem();
     private Register register = new Register();
-    private Sale sale; // ändrad till private
+    private Sale sale;
     private Item item = new Item(0, null, 0);
-    private ItemDTO itemDTO = new ItemDTO(null, null, 0, 0);
+    //private ItemDTO itemDTO = new ItemDTO(null, null, 0, 0);
     private Receipt receipt = new Receipt();
 
     /**
@@ -52,10 +52,10 @@ public class Controller {
     * @param paidAmount The customer's payment amount for the sale.
     */
     public double enterPayment(double paidAmount){
-        double change = paidAmount - this.sale.totalPrice;
+        this.sale.saleInfo.change = paidAmount - this.sale.totalPrice;
 
-        if (change > 0) { 
-            register.increaseAmount(paidAmount - change);
+        if (this.sale.saleInfo.change > 0) { 
+            register.increaseAmount(paidAmount - this.sale.change);
         } else {
             register.increaseAmount(paidAmount);
         }

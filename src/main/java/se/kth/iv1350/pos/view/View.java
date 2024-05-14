@@ -20,7 +20,6 @@ public class View {
     }
 
     public Controller controller;
-    
     /**
      * Creates an instance of a view with the specified parameters.
      * @param controller The controller used for all operations.
@@ -44,7 +43,7 @@ public class View {
         System.out.println("Total cost ( incl VAT ) : " + saleInfo.totalPrice + " SEK");
         double paidAmount = controller.enterPayment(100);
         System.out.println("\nCustomer pays " + paidAmount + " SEK :");
-        controller.endSale(1000);
+        controller.endSale(100);
         System.out.println("\nSent sale info to external accounting system.");
         System.out.println("Sent sale info to external inventory system.");
         controller.print();
@@ -57,9 +56,9 @@ public class View {
         System.out.println("VAT : " + saleInfo.totalVAT + " SEK");
 
         System.out.println("\nCash : " + paidAmount + " SEK");
-        System.out.println("Change : " + (paidAmount - saleInfo.totalPrice) + " SEK");
+        System.out.println("Change : " + saleInfo.change + " SEK");
         System.out.println("- - - - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
         
-        System.out.println("\nChange to give the customer : " + (paidAmount - saleInfo.totalPrice) + " SEK");
+        System.out.println("\nChange to give the customer : " + saleInfo.change + " SEK");
     }
 }

@@ -17,6 +17,7 @@ public class SaleDTO {
     public double totalVAT;
     public List<Item> items;
     public double runningTotal;
+    public double change;
  
     /**
      * Creates an instance of a sale with the specified parameters.
@@ -26,12 +27,13 @@ public class SaleDTO {
      * @param items The items of the sale.
      * @param runningTotal The running total of the sale.
      */
-    public SaleDTO(String saleTime, double totalPrice, double totalVAT, List<Item> items, double runningTotal) {
+    public SaleDTO(String saleTime, double runningTotal, double totalVAT, List<Item> items, double totalPrice, double change) {
         this.saleTime = saleTime;
         this.totalPrice = totalPrice;
         this.totalVAT = totalVAT;
         this.items = items;
         this.runningTotal = runningTotal;
+        this.change = change;
     }
     
     /**

@@ -9,9 +9,6 @@ import se.kth.iv1350.pos.integration.DatabaseConnectionException;
 import se.kth.iv1350.pos.integration.NoItemIDFoundException;
 import se.kth.iv1350.pos.model.SaleDTO;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class ControllerTest {
     private Controller instance;
