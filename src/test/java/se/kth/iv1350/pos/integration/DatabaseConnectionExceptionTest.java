@@ -16,8 +16,8 @@ public class DatabaseConnectionExceptionTest {
     @Test
     public void testConnectionToNonExistingDatabase(){
         assertThrows(DatabaseConnectionException.class, () -> {
-            inventorySystem.setStoreItemsToNull(); // ta bort alla items i inventory system
-            inventorySystem.fetchStoreItems(); // om den itne funkar så skickar den exception i InventorySystem-filen
+            inventorySystem.setStoreItemsToNull(); 
+            inventorySystem.fetchStoreItems();
         });
     }
 

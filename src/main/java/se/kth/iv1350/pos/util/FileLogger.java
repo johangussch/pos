@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Logs exceptions and events to a file.
+ */
 public class FileLogger implements Logger {
     private PrintWriter logStream;
 
