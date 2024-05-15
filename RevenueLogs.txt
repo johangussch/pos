@@ -20,3 +20,4 @@ The sale 2024-05-14 17:09:14 has ended. The total revenue is: 0.0 SEK.
 The sale 2024-05-14 17:10:59 has ended. The total revenue is: 0.0 SEK.
 The sale 2024-05-14 17:17:19 has ended. The total revenue is: 24.0 SEK.
 The sale 2024-05-14 17:18:54 has ended. The total revenue is: 24.0 SEK.
+The sale 2024-05-15 14:26:27 has ended. The total revenue is: 0.0 SEK.
