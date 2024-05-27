@@ -8,6 +8,8 @@ package se.kth.iv1350.pos.controller;
 import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.util.*;
+import se.kth.iv1350.pos.view.ConsoleTotalRevenueDisplay;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -21,7 +23,6 @@ public class Controller {
     private Sale sale;
     private Item item = new Item(0, null, 0);
     private Receipt receipt = new Receipt();
-    private List<TotalRevenueObserver> totalRevenueObservers = new ArrayList<>();
     private TotalRevenueFileOutputLogger totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
 
     /**
@@ -30,6 +31,7 @@ public class Controller {
     public boolean createNewSale(){
         this.sale = new Sale();
         this.totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
+        this.sale.addTotalRevenueObserver(new ConsoleTotalRevenueDisplay());
         if (this.sale == null) return false;
         return true;
     }
@@ -70,27 +72,12 @@ public class Controller {
             register.increaseAmount(paidAmount);
         }
 
-        notifyObservers();
+        this.sale.notifyObservers(); // hm
 
         return paidAmount;
     }
 
-    /**
-     * Notifies all observers of the total revenue.
-     */
-    public void notifyObservers() {
-        for (TotalRevenueObserver observer : totalRevenueObservers) {
-            observer.printNewTotalRevenue(this.sale.saleInfo.totalPrice);
-        }
-    }
-
-    /**
-     * Adds an observer to the list of observers.
-     * @param observer
-     */
-    public void addTotalRevenueObserver(TotalRevenueObserver observer) {
-        totalRevenueObservers.add(observer);
-    }
+    
     
     /**
     * Ends the sale instance, saving the total price and paid amount of the sale to  and updating

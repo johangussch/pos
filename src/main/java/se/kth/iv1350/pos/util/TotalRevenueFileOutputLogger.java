@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import se.kth.iv1350.pos.model.TotalRevenueObserver;
+
 public class TotalRevenueFileOutputLogger implements TotalRevenueObserver {
     private PrintWriter logStream;
 

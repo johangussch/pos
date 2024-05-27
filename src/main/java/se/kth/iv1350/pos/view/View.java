@@ -19,13 +19,13 @@ public class View {
     }
 
     public Controller controller;
+
     /**
      * Creates an instance of a view with the specified parameters.
      * @param controller The controller used for all operations.
      */
     public View(Controller controller){
         this.controller = controller;
-        controller.addTotalRevenueObserver(new ConsoleTotalRevenueDisplay());
     }
     
     public void runFakeExecution() throws NoItemIDFoundException {

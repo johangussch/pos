@@ -22,6 +22,7 @@ public class Sale {
     public List<Item> soldItems;
     public double paidAmount;
     public double change;
+    private List<TotalRevenueObserver> totalRevenueObservers = new ArrayList<>();
 
     /**
      * Creates an instance of a sale with the specified parameters.
@@ -99,5 +100,22 @@ public class Sale {
      */
     public List<Item> fetchItems(){
         return this.soldItems;
+    }
+
+    /**
+     * Notifies all observers of the total revenue.
+     */
+    public void notifyObservers() {
+        for (TotalRevenueObserver observer : totalRevenueObservers) {
+            observer.printNewTotalRevenue(this.saleInfo.totalPrice);
+        }
+    }
+
+    /**
+     * Adds an observer to the list of observers.
+     * @param observer
+     */
+    public void addTotalRevenueObserver(TotalRevenueObserver observer) {
+        totalRevenueObservers.add(observer);
     }
 }

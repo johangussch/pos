@@ -1,6 +1,6 @@
 package se.kth.iv1350.pos.view;
 
-import se.kth.iv1350.pos.util.TotalRevenueObserver;
+import se.kth.iv1350.pos.model.TotalRevenueObserver;
 
 public class ConsoleTotalRevenueDisplay implements TotalRevenueObserver {
     @Override
