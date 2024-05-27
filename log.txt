@@ -1,9 +1,8 @@
 Store items not found. Check Database connection.
 Item ID not found in InventorySystem
-Leif är bäst!
 Store items not found. Check Database connection.
-Item ID not found in InventorySystem
-Leif är bäst!
 Store items not found. Check Database connection.
-Item ID not found in InventorySystem
-Leif är bäst!
+Store items not found. Check Database connection.
+Store items not found. Check Database connection.
+Store items not found. Check Database connection.
+Store items not found. Check Database connection.

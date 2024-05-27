@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class TotalRevenueFileOutputLogger implements Logger{
+public class TotalRevenueFileOutputLogger implements TotalRevenueObserver {
     private PrintWriter logStream;
 
     public TotalRevenueFileOutputLogger() {
@@ -23,7 +23,11 @@ public class TotalRevenueFileOutputLogger implements Logger{
     }
 
     @Override
-    public void log(String message) {
-        logStream.println(message);
+    public void printNewTotalRevenue(double totalRevenue) {
+        logStream.println(totalRevenue);
+    }
+
+    public void log(String logMessage) {
+        logStream.println(logMessage);
     }
 }

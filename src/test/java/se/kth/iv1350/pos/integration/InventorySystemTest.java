@@ -15,18 +15,28 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void testFetchItemReturnsCorrectItemBasonOnItemID() throws NoItemIDFoundException {
+    public void testFetchItemReturnsCorrectItemBasonOnItemID() {
         int itemID = 1;
-        Item item = instance.fetchItem(itemID);
-        assertNotNull(item, "Item was not fetched");
+        try {
+            Item item = instance.fetchItem(itemID);
+            assertNotNull(item, "Item was not fetched");
+        } catch (DatabaseConnectionException e) {
+            fail("Database connection exception occurred: " + e.getMessage());
+        } catch (NoItemIDFoundException e) {
+            fail("No item ID found exception occurred: " + e.getMessage());
+        }
     }
 
     @Test
-    public void testUpdateQuantityUpdatesStoreItemsWithCorrectItem() throws NoItemIDFoundException{
+    public void testUpdateQuantityUpdatesStoreItemsWithCorrectItem() throws NoItemIDFoundException {
         int itemID = 1;
         int newQuantity = 5;
-        instance.updateQuantity(itemID, newQuantity);
-        assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
+        try {
+            instance.updateQuantity(itemID, newQuantity);
+            assertEquals(newQuantity, instance.fetchItem(itemID).fetchItemQuantity(), "Quantity was not updated");
+        } catch (DatabaseConnectionException e) {
+            fail("Database connection exception occurred: " + e.getMessage());
+        }
     }
 
     @Test

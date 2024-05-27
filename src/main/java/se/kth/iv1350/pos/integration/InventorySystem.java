@@ -36,9 +36,13 @@ public class InventorySystem {
     * 
     * @throws NoItemIDFoundException If the item ID is not found in the inventory.
     */
-    public Item fetchItem(int itemID) throws NoItemIDFoundException{
-        for (Item item : storeItems){
-            if (item.fetchItemID() == itemID) return item;
+    public Item fetchItem(int itemID) throws NoItemIDFoundException, DatabaseConnectionException {
+        try {
+            List<Item> fetchedStoredItems = fetchStoreItems();
+        } finally {
+            for (Item item : storeItems){
+                if (item.fetchItemID() == itemID) return item;
+            }
         }
         screenLogger.log("Item ID not found.");
         fileLogger.log("Item ID not found in InventorySystem");
@@ -51,7 +55,7 @@ public class InventorySystem {
     * @param itemID The scanned item's ID.
     * @param newQuantity The new quantity of the already scanned item.
     */
-    public void updateQuantity(int itemID, int newQuantity) throws NoItemIDFoundException{
+    public void updateQuantity(int itemID, int newQuantity) throws NoItemIDFoundException, DatabaseConnectionException {
         Item item = fetchItem(itemID);
 
         if (item != null) {

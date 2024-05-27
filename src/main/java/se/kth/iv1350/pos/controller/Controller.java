@@ -8,7 +8,6 @@ package se.kth.iv1350.pos.controller;
 import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.util.*;
-import se.kth.iv1350.pos.view.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,14 +22,14 @@ public class Controller {
     private Item item = new Item(0, null, 0);
     private Receipt receipt = new Receipt();
     private List<TotalRevenueObserver> totalRevenueObservers = new ArrayList<>();
-    private Logger logger;
+    private TotalRevenueFileOutputLogger totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
 
     /**
     * Creates a new sale instance.
     */
     public boolean createNewSale(){
         this.sale = new Sale();
-        this.logger = new TotalRevenueFileOutputLogger();
+        this.totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
         if (this.sale == null) return false;
         return true;
     }
@@ -43,7 +42,12 @@ public class Controller {
     * @return The sale information of the newly scanned item.
     */
     public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException{
-        item = inventorySystem.fetchItem(itemID);
+        try {
+            item = inventorySystem.fetchItem(itemID);
+        } catch (DatabaseConnectionException e) {
+            e.printStackTrace();
+            return null;
+        }
 
         if (item == null) return null;
 
@@ -76,7 +80,7 @@ public class Controller {
      */
     public void notifyObservers() {
         for (TotalRevenueObserver observer : totalRevenueObservers) {
-            observer.newTotalRevenue(this.sale.saleInfo.totalPrice);
+            observer.printNewTotalRevenue(this.sale.saleInfo.totalPrice);
         }
     }
 
@@ -104,7 +108,7 @@ public class Controller {
             inventorySystem.updateInventory(sale.soldItems);
         }
 
-        logger.log("The sale " + this.sale.saleInfo.saleTime + " has ended. The total revenue is: " + this.sale.totalPrice + " SEK.");
+        totalRevenueFileOutputLogger.log("The sale " + this.sale.saleInfo.saleTime + " has ended. The total revenue is: " + this.sale.totalPrice + " SEK.");
 
         return this.sale.totalPrice;
     } 
