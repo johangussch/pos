@@ -10,15 +10,13 @@ import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.util.*;
 import se.kth.iv1350.pos.view.ConsoleTotalRevenueDisplay;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /**
 * The system the cashier interacts with in the pos scenario.
 */
 public class Controller {
-    private InventorySystem inventorySystem = new InventorySystem();
-    private AccountingSystem accountingSystem = new AccountingSystem();
+    private DatabaseConnection databaseConnection = new DatabaseConnection();
+    private InventorySystem inventorySystem = databaseConnection.connectToInventorySystem();
+    private AccountingSystem accountingSystem = databaseConnection.connectToAccountingSystem();
     private Register register = new Register();
     private Sale sale;
     private Item item = new Item(0, null, 0);
@@ -44,13 +42,15 @@ public class Controller {
     * @return The sale information of the newly scanned item.
     */
     public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException{
+        
         try {
-            item = inventorySystem.fetchItem(itemID);
+            databaseConnection.simulateDatabaseConnectionError();
         } catch (DatabaseConnectionException e) {
-            e.printStackTrace();
-            return null;
+            System.out.println("Could not connect to the database.");
         }
 
+        item = inventorySystem.fetchItem(itemID);
+        
         if (item == null) return null;
 
         this.sale.listSoldItem(item, itemQuantity);
@@ -72,12 +72,10 @@ public class Controller {
             register.increaseAmount(paidAmount);
         }
 
-        this.sale.notifyObservers(); // hm
+        this.sale.notifyObservers();
 
         return paidAmount;
     }
-
-    
     
     /**
     * Ends the sale instance, saving the total price and paid amount of the sale to  and updating
@@ -88,8 +86,7 @@ public class Controller {
     public double endSale(double paidAmount){
         this.sale.totalPrice = sale.fetchRunningTotal() + sale.fetchTotalVAT();
         this.sale.paidAmount = paidAmount;
-        
-        
+
         if (sale.soldItems != null) {
             accountingSystem.recordSoldItem(sale.soldItems);
             inventorySystem.updateInventory(sale.soldItems);

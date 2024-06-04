@@ -36,14 +36,12 @@ public class InventorySystem {
     * 
     * @throws NoItemIDFoundException If the item ID is not found in the inventory.
     */
-    public Item fetchItem(int itemID) throws NoItemIDFoundException, DatabaseConnectionException {
-        try {
-            List<Item> fetchedStoredItems = fetchStoreItems();
-        } finally {
-            for (Item item : storeItems){
-                if (item.fetchItemID() == itemID) return item;
-            }
+    public Item fetchItem(int itemID) throws NoItemIDFoundException {
+
+        for (Item item : storeItems){
+            if (item.fetchItemID() == itemID) return item;
         }
+
         screenLogger.log("Item ID not found.");
         fileLogger.log("Item ID not found in InventorySystem");
         throw new NoItemIDFoundException("Item ID not found in InventorySystem.");
@@ -70,17 +68,5 @@ public class InventorySystem {
 	 */
     public void updateInventory(List<Item> items){
         System.out.println("Successfully recorded the sold items in Inventory System.");
-    }
-
-    /**
-    * Fetches the store items.
-    *
-    * @return The store's items.
-    * @throws DatabaseConnectionException If the store items are not found.
-    */
-    public List<Item> fetchStoreItems() throws DatabaseConnectionException{
-        screenLogger.log("Failed while fetching store items.");
-        fileLogger.log("Store items not found. Check Database connection.");
-        throw new DatabaseConnectionException("Store items not found. Check Database connection.");
     }
 }

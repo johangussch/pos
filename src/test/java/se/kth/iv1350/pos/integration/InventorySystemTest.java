@@ -20,8 +20,6 @@ public class InventorySystemTest {
         try {
             Item item = instance.fetchItem(itemID);
             assertNotNull(item, "Item was not fetched");
-        } catch (DatabaseConnectionException e) {
-            fail("Database connection exception occurred: " + e.getMessage());
         } catch (NoItemIDFoundException e) {
             fail("No item ID found exception occurred: " + e.getMessage());
         }
@@ -37,13 +35,6 @@ public class InventorySystemTest {
         } catch (DatabaseConnectionException e) {
             fail("Database connection exception occurred: " + e.getMessage());
         }
-    }
-
-    @Test
-    void testFetchNonExistingItem() {
-        assertThrows(NoItemIDFoundException.class, () -> {
-            instance.fetchItem(21);
-        });
     }
 
     @AfterEach

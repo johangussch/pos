@@ -6,22 +6,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DatabaseConnectionExceptionTest {
-    private InventorySystem inventorySystem;
+    private DatabaseConnection databaseConnection;
     
     @BeforeEach
     public void setUp() {
-        inventorySystem = new InventorySystem();
+        databaseConnection = new DatabaseConnection();
     }
 
     @Test
     public void testConnectionToNonExistingDatabase(){
         assertThrows(DatabaseConnectionException.class, () -> {
-            inventorySystem.fetchStoreItems();
+            databaseConnection.simulateDatabaseConnectionError();
         });
     }
 
     @AfterEach
     public void tearDown() {
-        inventorySystem = null;
+        databaseConnection = null;
     }
 }
