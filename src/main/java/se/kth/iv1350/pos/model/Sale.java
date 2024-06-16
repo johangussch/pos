@@ -34,7 +34,6 @@ public class Sale {
         this.soldItems = new ArrayList<>();
         this.runningTotal = 0;
     }
-    
     /**
      * @return The total price of the sale.
      */

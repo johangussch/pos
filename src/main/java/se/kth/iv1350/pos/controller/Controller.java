@@ -42,12 +42,6 @@ public class Controller {
     * @return The sale information of the newly scanned item.
     */
     public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException{
-        
-        try {
-            databaseConnection.simulateDatabaseConnectionError();
-        } catch (DatabaseConnectionException e) {
-            System.out.println("Could not connect to the database.");
-        }
 
         item = inventorySystem.fetchItem(itemID);
         
@@ -72,8 +66,6 @@ public class Controller {
             register.increaseAmount(paidAmount);
         }
 
-        this.sale.notifyObservers();
-
         return paidAmount;
     }
     
@@ -93,7 +85,7 @@ public class Controller {
         }
 
         totalRevenueFileOutputLogger.log("The sale " + this.sale.saleInfo.saleTime + " has ended. The total revenue is: " + this.sale.totalPrice + " SEK.");
-
+        notifyObservers();
         return this.sale.totalPrice;
     } 
     

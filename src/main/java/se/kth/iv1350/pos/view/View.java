@@ -8,6 +8,7 @@ package se.kth.iv1350.pos.view;
 
 import se.kth.iv1350.pos.controller.Controller;
 import se.kth.iv1350.pos.integration.NoItemIDFoundException;
+import se.kth.iv1350.pos.integration.DatabaseConnectionException;
 import se.kth.iv1350.pos.model.SaleDTO;
 
 /**
@@ -28,7 +29,7 @@ public class View {
         this.controller = controller;
     }
     
-    public void runFakeExecution() throws NoItemIDFoundException {
+    public void runFakeExecution() throws NoItemIDFoundException DatabaseConnectionException{
         try {
             controller.createNewSale();
             SaleDTO saleInfo = controller.enterItem(1, 2);
@@ -61,8 +62,10 @@ public class View {
             System.out.println("- - - - - - - - - - - - - - - - - - - - End receipt - - - - - - - - - - - - - - - - - - -");
             
             System.out.println("\nChange to give the customer : " + saleInfo.change + " SEK");
-        } catch (NoItemIDFoundException e) {
-            System.out.println("Item ID not found in InventorySystem.");
+        } catch (NoItemIDFoundException | DatabaseConnectionException e) {
+            System.out.println(e);
+            logger.log(e);
+            
         }
     }
 }
