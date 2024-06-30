@@ -23,7 +23,7 @@ public class FileLoggerTest {
 
     @Test
     public void testLogMessage() {
-        String message = "Leif är bäst!";
+        String message = "testet funkar";
         fileLogger.log(message);
 
         assertTrue(fileExists(logFilePath));

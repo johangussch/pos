@@ -9,7 +9,7 @@ public class DatabaseConnectionExceptionTest {
     private DatabaseConnection databaseConnection;
     
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws DatabaseConnectionException {
         databaseConnection = new DatabaseConnection();
     }
 

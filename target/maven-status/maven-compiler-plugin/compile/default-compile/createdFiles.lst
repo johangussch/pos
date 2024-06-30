@@ -13,6 +13,7 @@ se\kth\iv1350\pos\view\ConsoleTotalRevenueDisplay.class
 se\kth\iv1350\pos\util\FileLogger.class
 se\kth\iv1350\pos\util\TotalRevenueFileOutputLogger.class
 se\kth\iv1350\pos\startup\Main.class
+se\kth\iv1350\pos\integration\DatabaseConnection.class
 se\kth\iv1350\pos\model\Sale.class
 se\kth\iv1350\pos\util\ScreenLogger.class
 se\kth\iv1350\pos\integration\NoItemIDFoundException.class

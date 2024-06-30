@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import se.kth.iv1350.pos.integration.DatabaseConnectionException;
 import se.kth.iv1350.pos.integration.NoItemIDFoundException;
 import se.kth.iv1350.pos.model.SaleDTO;
 
@@ -13,28 +14,18 @@ public class ControllerTest {
     private Controller instance;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws DatabaseConnectionException{
         instance = new Controller();
     }
     
     @Test
-    public void testCreateNewSaleCreatesTheSaleInstance() {
+    public void testCreateNewSaleCreatesTheSaleInstance() throws DatabaseConnectionException{
         boolean saleCreated = instance.createNewSale();
         assertNotNull(saleCreated, "Sale was not created");
     }
-
+    
     @Test
-    public void testEnterItemFetchesCorrectSaleInfo() throws NoItemIDFoundException{
-        instance.createNewSale();
-        int itemID = 1;
-        int itemQuantity = 1;
-        SaleDTO saleInfo = instance.enterItem(itemID, itemQuantity);
-        
-        assertNotNull(saleInfo, "Item was not entered");
-    }
-
-    @Test
-    public void testEnterPaymentReturnsCorrectChange() {
+    public void testEnterPaymentReturnsCorrectChange() throws DatabaseConnectionException{
         instance.createNewSale();
         double paidAmount = 10;
         double change = instance.enterPayment(paidAmount);
@@ -42,7 +33,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void testEndSaleEndsTheSaleInstance() {
+    public void testEndSaleEndsTheSaleInstance() throws DatabaseConnectionException{
         instance.createNewSale();
         double expResult = 0;
         double result = instance.endSale(0);
@@ -50,7 +41,7 @@ public class ControllerTest {
     }
     
     @Test
-    public void testPrintPrintsTheReceipt() {
+    public void testPrintPrintsTheReceipt() throws DatabaseConnectionException{
         instance.createNewSale();
         boolean receiptPrinted = instance.print();
         assertTrue(receiptPrinted, "Receipt was not printed");

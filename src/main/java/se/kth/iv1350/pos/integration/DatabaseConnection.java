@@ -8,7 +8,7 @@ public class DatabaseConnection {
     /**
      * Creates a new instance of a database connection.
      */
-    public DatabaseConnection() {
+    public DatabaseConnection() throws DatabaseConnectionException{
     }
 
     /**
@@ -31,7 +31,7 @@ public class DatabaseConnection {
      * Simulates a database connection error.
      * @throws DatabaseConnectionException
      */
-    public void simulateDatabaseConnectionError() throws DatabaseConnectionException{
+    public void simulateDatabaseConnectionError() throws DatabaseConnectionException {
         throw new DatabaseConnectionException("Could not connect to the database.");
     }
 }

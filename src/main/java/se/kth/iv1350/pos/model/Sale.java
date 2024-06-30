@@ -92,6 +92,8 @@ public class Sale {
         this.totalVAT += item.fetchItemDTO().fetchItemVAT() * itemQuantity;
         this.totalPrice = this.runningTotal + this.totalVAT;
         this.saleInfo = new SaleDTO(this.saleTime, this.runningTotal, this.totalVAT, this.soldItems, this.totalPrice, this.change);
+
+        notifyObservers();
     }
     
     /**

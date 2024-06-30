@@ -5,28 +5,37 @@
  */
 
 package se.kth.iv1350.pos.controller;
+
 import se.kth.iv1350.pos.integration.*;
 import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.util.*;
 import se.kth.iv1350.pos.view.ConsoleTotalRevenueDisplay;
 
 /**
-* The system the cashier interacts with in the pos scenario.
-*/
+ * The system the cashier interacts with in the pos scenario.
+ */
 public class Controller {
-    private DatabaseConnection databaseConnection = new DatabaseConnection();
-    private InventorySystem inventorySystem = databaseConnection.connectToInventorySystem();
-    private AccountingSystem accountingSystem = databaseConnection.connectToAccountingSystem();
+    private DatabaseConnection databaseConnection;
+    private InventorySystem inventorySystem;
+    private AccountingSystem accountingSystem;
     private Register register = new Register();
     private Sale sale;
     private Item item = new Item(0, null, 0);
     private Receipt receipt = new Receipt();
     private TotalRevenueFileOutputLogger totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
+    private FileLogger fileLogger = new FileLogger();
+
+    public Controller() throws DatabaseConnectionException {
+        this.databaseConnection = new DatabaseConnection();
+        this.inventorySystem = databaseConnection.connectToInventorySystem();
+        this.accountingSystem = databaseConnection.connectToAccountingSystem();
+       
+    }
 
     /**
-    * Creates a new sale instance.
-    */
-    public boolean createNewSale(){
+     * Creates a new sale instance.
+     */
+    public boolean createNewSale() throws DatabaseConnectionException {
         this.sale = new Sale();
         this.totalRevenueFileOutputLogger = new TotalRevenueFileOutputLogger();
         this.sale.addTotalRevenueObserver(new ConsoleTotalRevenueDisplay());
@@ -35,13 +44,21 @@ public class Controller {
     }
 
     /**
-    * Lists the item(s) being sold by updating the inventory and sale information.
-    *
-    * @param itemID The scanned item's ID.
-    * @param itemQuantity  The scanned item's quantity.
-    * @return The sale information of the newly scanned item.
-    */
-    public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException{
+     * Lists the item(s) being sold by updating the inventory and sale information.
+     *
+     * @param itemID The scanned item's ID.
+     * @param itemQuantity  The scanned item's quantity.
+     * @return The sale information of the newly scanned item.
+     */
+    public SaleDTO enterItem(int itemID, int itemQuantity) throws NoItemIDFoundException, DatabaseConnectionException {
+        if (itemID == 0) {
+            throw new NoItemIDFoundException("Item ID cannot be zero.");
+        }
+
+        if (itemID == 666){
+            fileLogger.log("Couldn't connect to database.");
+            throw new DatabaseConnectionException("Could not initialize the systems due to a database connection issue.");
+        }   
 
         item = inventorySystem.fetchItem(itemID);
         
@@ -85,7 +102,7 @@ public class Controller {
         }
 
         totalRevenueFileOutputLogger.log("The sale " + this.sale.saleInfo.saleTime + " has ended. The total revenue is: " + this.sale.totalPrice + " SEK.");
-        notifyObservers();
+
         return this.sale.totalPrice;
     } 
     
